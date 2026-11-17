@@ -524,10 +524,7 @@ body {
    ================================================== */
 .detail-top-bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
     margin-bottom: 28px;
     padding-bottom: 18px;
     border-bottom: 1px solid #e2e8f0;
@@ -550,29 +547,6 @@ body {
 
 .back-topics-btn:hover {
     background-color: #1b2f45;
-}
-
-.detail-switcher {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.switch-pill {
-    padding: 7px 14px;
-    border-radius: 20px;
-    border: 1px solid #cbd5e1;
-    background: #f8fafc;
-    color: #334155;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.switch-pill.active {
-    background: #ff1744;
-    color: #ffffff;
-    border-color: #ff1744;
 }
 
 .topic-full-hero {
@@ -624,20 +598,24 @@ body {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 32px;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
 }
 
 .topic-narrative h3 {
     font-size: 21px;
     font-weight: 800;
     color: #27415e;
-    margin-bottom: 12px;
+    margin: 22px 0 10px;
+}
+
+.topic-narrative h3:first-child {
+    margin-top: 0;
 }
 
 .topic-narrative p {
-    font-size: 15px;
+    font-size: 14.5px;
     color: #334155;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     line-height: 1.75;
 }
 
@@ -647,6 +625,7 @@ body {
     border-top: 4px solid #ff1744;
     border-radius: 12px;
     padding: 24px;
+    height: fit-content;
 }
 
 .topic-sidebar-box h4 {
@@ -670,17 +649,99 @@ body {
     border-left: 3px solid #27415e;
 }
 
-.topic-gallery-title {
-    font-size: 20px;
+/* ==================================================
+   APARTADO DE PROTAGONISTAS / PERSONAJES HISTÓRICOS CON FOTO
+   ================================================== */
+.figures-section {
+    margin-bottom: 42px;
+}
+
+.figures-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.figure-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.figure-photo {
+    width: 100%;
+    height: 210px;
+    background-color: #1e293b;
+    border-bottom: 4px solid #27415e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.figure-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.figure-info {
+    padding: 16px;
+    flex: 1;
+}
+
+.figure-role-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ff1744;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+}
+
+.figure-info h4 {
+    font-size: 16px;
     font-weight: 800;
     color: #27415e;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+}
+
+.figure-info p {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #475569;
+}
+
+.topic-gallery-title {
+    font-size: 21px;
+    font-weight: 800;
+    color: #27415e;
+    margin-bottom: 6px;
+}
+
+.topic-gallery-subtitle {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 20px;
 }
 
 .topic-gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    margin-bottom: 40px;
 }
 
 .gallery-figure {
@@ -715,6 +776,160 @@ body {
     font-size: 13px;
     color: #475569;
     background: #f8fafc;
+}
+
+/* ==================================================
+   COMPARADOR INTERACTIVO DE MAPAS (ANTES Y DESPUÉS)
+   ================================================== */
+.map-slider-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px;
+    margin-top: 10px;
+}
+
+.map-slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.map-step-btn {
+    padding: 9px 18px;
+    border-radius: 25px;
+    border: 2px solid #27415e;
+    background: #ffffff;
+    color: #27415e;
+    font-size: 12.5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.map-step-btn.active, .map-step-btn:hover {
+    background: #27415e;
+    color: #ffffff;
+}
+
+.map-range-wrapper {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #27415e;
+}
+
+.map-range-wrapper input[type="range"] {
+    flex: 1;
+    accent-color: #ff1744;
+    cursor: ew-resize;
+    height: 6px;
+}
+
+.map-compare-frame {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f172a;
+    border: 2px solid #cbd5e1;
+    user-select: none;
+}
+
+.map-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.map-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.map-layer-top {
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.08s linear;
+}
+
+.map-divider-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #ff1744;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.map-divider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ff1744;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.map-label-tag {
+    position: absolute;
+    top: 14px;
+    background: rgba(7, 7, 7, 0.85);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 20px;
+    z-index: 4;
+}
+
+.map-label-left {
+    left: 14px;
+    border-left: 3px solid #93c5fd;
+}
+
+.map-label-right {
+    right: 14px;
+    border-right: 3px solid #ff1744;
+}
+
+.map-info-caption {
+    margin-top: 18px;
+    background: #ffffff;
+    border-left: 4px solid #ff1744;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #334155;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* ==================================================
@@ -1118,9 +1333,10 @@ body {
     .intro-split-grid, .context-grid-4, .topic-full-hero, .topic-content-grid, .topic-gallery-grid, .network-layout, .video-layout, .timeline-grid, .comparator-result {
         grid-template-columns: 1fr;
     }
-    .members-grid { grid-template-columns: repeat(2, 1fr); }
+    .members-grid, .figures-grid { grid-template-columns: repeat(2, 1fr); }
+    .map-compare-frame { height: 290px; }
 }
 
 @media (max-width: 540px) {
-    .members-grid { grid-template-columns: 1fr; }
+    .members-grid, .figures-grid { grid-template-columns: 1fr; }
 }
