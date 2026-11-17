@@ -31,7 +31,9 @@ function probarExtensiones(img, nombreBase) {
         img.src = alternativas[intento];
     } else {
         img.onerror = null;
-        img.parentElement.innerHTML = `<span>FALTA: ${nombreBase}.jpg</span>`;
+        if (img.parentElement) {
+            img.parentElement.innerHTML = `<span>IMAGEN: ${nombreBase.toUpperCase()}</span>`;
+        }
     }
 }
 
@@ -56,14 +58,16 @@ function cambiarPagina(idPagina) {
         paginaActiva.classList.add("active-page");
     }
 
+    // Marcar la pestaña activa (si estamos en detalle-tema, ilumina Contexto histórico)
+    const tabObjetivo = idPagina === "detalle-tema" ? "contexto" : idPagina;
     document.querySelectorAll(".nav-tab").forEach(tab => {
         tab.classList.remove("active");
-        if (tab.dataset.page === idPagina) {
+        if (tab.dataset.page === tabObjetivo) {
             tab.classList.add("active");
         }
     });
 
-    const numero = ordenPaginas.indexOf(idPagina) + 1;
+    const numero = ordenPaginas.indexOf(tabObjetivo) + 1;
     document.getElementById("pageIndicator").textContent = `PÁGINA ${numero} DE ${ordenPaginas.length}`;
 
     if (idPagina === "red-historica") {
@@ -74,7 +78,155 @@ function cambiarPagina(idPagina) {
 }
 
 // ==========================================
-// 2. ESTRUCTURA DE DATOS: RED DE RELACIONES HISTÓRICAS
+// 1.1 DESARROLLO COMPLETO DE CADA TEMA DEL CONTEXTO HISTÓRICO
+// ==========================================
+const temasDesarrollados = {
+    postnapoleonico: {
+        etiqueta: "EJE 01 • MUNDO POST-NAPOLEÓNICO (1815 – 1830)",
+        titulo: "La Restauración Europea y el Sistema de Metternich",
+        bajada: "Tras la derrota de Napoleón en Waterloo, las monarquías absolutas intentaron borrar veinticinco años de revolución y redibujar Europa según los intereses dinásticos.",
+        imagenPrincipal: "tema_napoleon",
+        parrafos: [
+            "Entre septiembre de 1814 y junio de 1815, las grandes potencias vencedoras (Austria, Rusia, Prusia y Gran Bretaña) se reunieron en el <strong>Congreso de Viena</strong> bajo la dirección del canciller austríaco <strong>Klemens von Metternich</strong>. El objetivo era claro: restaurar en sus tronos a las dinastías legítimas depuestas por Napoleón y crear un equilibrio territorial que impidiera el surgimiento de una nueva potencia hegemónica.",
+            "Para sostener este orden conservador se fundó la <strong>Santa Alianza</strong> (impulsada por el zar Alejandro I de Rusia), un pacto político-religioso que autorizaba la intervención militar en cualquier país donde estallara una revolución liberal o constitucional, como ocurrió en España e Italia entre 1820 y 1823.",
+            "Sin embargo, el Congreso de Viena cometió un error histórico fundamental: trazó fronteras artificiales sin consultar la identidad cultural de los pueblos. Alemania quedó dividida en 39 Estados, Italia fragmentada bajo control austríaco y Polonia repartida, sembrando la semilla de las futuras revoluciones liberales y nacionales."
+        ],
+        datosClave: [
+            "<strong>Principio de Legitimidad:</strong> Retorno de los reyes absolutos anteriores a 1789 (como Luis XVIII en Francia).",
+            "<strong>Contención de Francia:</strong> Creación de Estados-tapón en sus fronteras (Reino de los Países Bajos y Confederación Germánica).",
+            "<strong>Censura y vigilancia:</strong> Represión contra universidades, prensa libre y sociedades secretas como los Carbonarios."
+        ],
+        galeria: [
+            { img: "napoleon_viena", pie: "El Congreso de Viena (1815): diplomáticos europeos redibujando el mapa tras la caída de Napoleón." },
+            { img: "napoleon_mapa", pie: "Europa tras 1815: fronteras dinásticas que ignoraron las identidades nacionales." }
+        ]
+    },
+    industrial: {
+        etiqueta: "EJE 02 • REVOLUCIÓN INDUSTRIAL (SIGLO XIX)",
+        titulo: "Mecanización, Urbanización y la Cuestión Social",
+        bajada: "Mientras la política intentaba mirar hacia el pasado, la economía europea protagonizaba la transformación material más profunda desde el Neolítico.",
+        imagenPrincipal: "tema_industria",
+        parrafos: [
+            "Iniciada en Gran Bretaña a finales del siglo XVIII y expandida hacia Bélgica, Francia y Alemania durante la primera mitad del siglo XIX, la <strong>Revolución Industrial</strong> sustituyó el trabajo manual y artesanal por la producción mecanizada en grandes fábricas movidas por la energía del vapor y el carbón.",
+            "La expansión del ferrocarril y la navegación a vapor integraron los mercados nacionales y aceleraron el comercio internacional. Sin embargo, este crecimiento económico trajo consigo una profunda fractura social conocida como la <strong>cuestión social</strong>.",
+            "Millones de campesinos emigraron a ciudades industriales como Manchester, Birmingham o Lyon, formando el <strong>proletariado urbano</strong>. Hombres, mujeres y niños trabajaban entre 14 y 16 horas diarias en fábricas insalubres, sin seguro médico, sin descanso dominical y viviendo en barrios hacinados, frente a una <strong>burguesía industrial</strong> que acumulaba el capital."
+        ],
+        datosClave: [
+            "<strong>Nueva estructura de clases:</strong> La burguesía (dueña de fábricas y bancos) y el proletariado (trabajadores asalariados).",
+            "<strong>Primeras protestas obreras:</strong> El movimiento ludita (destrucción de máquinas) y las primeras asociaciones sindicales (Trade Unions).",
+            "<strong>Revolución en el transporte:</strong> Inauguración de las primeras líneas ferroviarias modernas (1825–1830)."
+        ],
+        galeria: [
+            { img: "industria_fabrica", pie: "Interior de fábricas textiles mecanizadas: el nuevo ritmo de trabajo impuesto por la máquina." },
+            { img: "industria_ciudad", pie: "Crecimiento urbano e industrial en Europa: chimeneas, ferrocarriles y barrios obreros." }
+        ]
+    },
+    utopias: {
+        etiqueta: "EJE 03 • UTOPÍAS SOCIALES (PRIMER SOCIALISMO)",
+        titulo: "Propuestas Comunitarias frente a la Desigualdad Industrial",
+        bajada: "Antes del marxismo, un grupo de pensadores y filántropos imaginó modelos de sociedad cooperativa para corregir las injusticias del capitalismo industrial.",
+        imagenPrincipal: "tema_utopias",
+        parrafos: [
+            "El impacto humano de la Revolución Industrial llevó a diversos filósofos, economistas y empresarios reformistas a cuestionar el liberalismo económico sin límites. Posteriormente denominados <strong>socialistas utópicos</strong>, estos pensadores creían que era posible alcanzar una sociedad justa mediante la razón, la educación y el ejemplo comunitario, sin recurrir a la violencia revolucionaria.",
+            "El empresario británico <strong>Robert Owen</strong> demostró en su fábrica textil de <em>New Lanark</em> (Escocia) que reducir la jornada laboral, mejorar los salarios, prohibir el trabajo infantil y construir escuelas gratuitas aumentaba tanto el bienestar obrero como la productividad.",
+            "Por su parte, el francés <strong>Charles Fourier</strong> propuso la creación de los <em>falansterios</em> —comunidades autosuficientes de unas 1.600 personas donde el trabajo se rotaba según la vocación de cada individuo—, mientras <strong>Henri de Saint-Simon</strong> defendió una sociedad dirigida por científicos, ingenieros y productores útiles en lugar de nobles ociosos."
+        ],
+        datosClave: [
+            "<strong>Robert Owen (1771–1858):</strong> Pionero del cooperativismo moderno y de la legislación laboral protectora.",
+            "<strong>Charles Fourier (1772–1837):</strong> Crítico de la monotonía fabril e ideólogo de las comunidades armónicas (falansterios).",
+            "<strong>Henri de Saint-Simon (1760–1825):</strong> Propuso reorganizar la sociedad bajo criterios científicos e industriales."
+        ],
+        galeria: [
+            { img: "utopias_owen", pie: "New Lanark (Escocia): la comunidad industrial modelo impulsada por Robert Owen." },
+            { img: "utopias_falansterio", pie: "Diseño arquitectónico de un Falansterio según los planos comunitarios de Charles Fourier." }
+        ]
+    },
+    romanticismo: {
+        etiqueta: "EJE 04 • ROMANTICISMO Y NACIONALISMO (1815 – 1848)",
+        titulo: "La Rebelión del Sentimiento y el Despertar de las Naciones",
+        bajada: "El arte, la literatura y la filosofía romántica rescataron las raíces históricas de los pueblos, convirtiendo la identidad cultural en bandera política de libertad.",
+        imagenPrincipal: "tema_romanticismo",
+        parrafos: [
+            "Como reacción frente al racionalismo frío de la Ilustración y la uniformidad gris de las ciudades industriales, surgió el <strong>Romanticismo</strong>. Este movimiento cultural exaltó las pasiones humanas, la libertad creadora, la naturaleza indómita y la rebeldía contra toda forma de opresión.",
+            "A través del concepto alemán del <em>Volksgeist</em> (el 'espíritu del pueblo' formulado por Herder), los románticos comenzaron a recopilar cuentos tradicionales, canciones folclóricas, lenguas locales e historia medieval. Esta búsqueda de identidad propia alimentó directamente al <strong>Nacionalismo</strong>.",
+            "El nacionalismo sostuvo que cada pueblo con historia, lengua y cultura comunes constituía una <strong>nación</strong> con derecho a gobernarse como Estado soberano. Esta fuerza impulsó la independencia de Grecia (1829) y Bélgica (1830), inspiró a líderes como <strong>Giuseppe Mazzini</strong> en Italia y culminó en las revoluciones europeas de <strong>1848</strong>, conocidas como la <em>Primavera de los Pueblos</em>."
+        ],
+        datosClave: [
+            "<strong>Arte comprometido:</strong> Obras como <em>La Libertad guiando al pueblo</em> (1830) de Eugène Delacroix simbolizaron la lucha revolucionaria.",
+            "<strong>Mazzini y la Joven Italia:</strong> Movimiento juvenil que luchó por la unificación republicana de Italia frente a Austria.",
+            "<strong>La Primavera de los Pueblos (1848):</strong> Oleada revolucionaria en París, Viena, Berlín y Milán que derrumbó el sistema de Metternich."
+        ],
+        galeria: [
+            { img: "romanticismo_delacroix", pie: "La Libertad guiando al pueblo (Eugène Delacroix, 1830): ícono del romanticismo revolucionario." },
+            { img: "romanticismo_1848", pie: "Barricadas de 1848: la unión de demandas liberales, nacionales y obreras en Europa." }
+        ]
+    }
+};
+
+function abrirDetalleTema(claveTema) {
+    const tema = temasDesarrollados[claveTema];
+    if (!tema) return;
+
+    // Botones superiores para cambiar rápido entre los 4 temas sin volver atrás
+    const nombresCortos = {
+        postnapoleonico: "01. Mundo Post-Napoleónico",
+        industrial: "02. Revolución Industrial",
+        utopias: "03. Utopías Sociales",
+        romanticismo: "04. Romanticismo y Nacionalismo"
+    };
+
+    const switcher = document.getElementById("detailSwitcher");
+    switcher.innerHTML = Object.keys(temasDesarrollados).map(key => `
+        <button class="switch-pill ${key === claveTema ? 'active' : ''}" onclick="abrirDetalleTema('${key}')">
+            ${nombresCortos[key]}
+        </button>
+    `).join("");
+
+    // Renderizar el contenido completo del tema seleccionado
+    const container = document.getElementById("topicFullContainer");
+    container.innerHTML = `
+        <div class="topic-full-hero">
+            <div>
+                <span class="section-kicker" style="color:#93c5fd;">${tema.etiqueta}</span>
+                <h2>${tema.titulo}</h2>
+                <p>${tema.bajada}</p>
+            </div>
+            <div class="topic-full-hero-img">
+                <img src="${tema.imagenPrincipal}.jpg" alt="${tema.titulo}" onerror="probarExtensiones(this, '${tema.imagenPrincipal}')">
+            </div>
+        </div>
+
+        <div class="topic-content-grid">
+            <div class="topic-narrative">
+                <h3>Desarrollo Histórico</h3>
+                ${tema.parrafos.map(p => `<p>${p}</p>`).join("")}
+            </div>
+            <aside class="topic-sidebar-box">
+                <h4><i class="fa-solid fa-bookmark" style="color:#ff1744; margin-right:6px;"></i> Claves del Periodo</h4>
+                <ul class="topic-key-list">
+                    ${tema.datosClave.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+            </aside>
+        </div>
+
+        <h3 class="topic-gallery-title">Evidencia Visual e Ilustraciones Históricas</h3>
+        <div class="topic-gallery-grid">
+            ${tema.galeria.map(foto => `
+                <figure class="gallery-figure">
+                    <div class="gallery-figure-img">
+                        <img src="${foto.img}.jpg" alt="${foto.pie}" onerror="probarExtensiones(this, '${foto.img}')">
+                    </div>
+                    <figcaption>${foto.pie}</figcaption>
+                </figure>
+            `).join("")}
+        </div>
+    `;
+
+    cambiarPagina("detalle-tema");
+}
+
+// ==========================================
+// 2. RED INTERACTIVA DE RELACIONES HISTÓRICAS
 // ==========================================
 const nodosHistoricos = [
     {
@@ -82,69 +234,93 @@ const nodosHistoricos = [
         titulo: "Congreso de Viena (1815)",
         tipo: "causa",
         etiqueta: "CAUSA POLÍTICA",
-        descripcion: "Reunión de las potencias europeas tras la caída de Napoleón para restaurar las monarquías absolutas y redibujar el mapa europeo bajo el principio de legitimidad.",
-        conectados: ["nacionalismo", "revoluciones1848"],
+        descripcion: "Cumbre diplomática liderada por Austria, Rusia, Prusia y Gran Bretaña tras derrotar a Napoleón. Restauró las monarquías absolutas y trazó fronteras artificiales sin respetar las nacionalidades.",
+        conectados: ["metternich", "nacionalismo", "rev1848"],
         justificacion: [
-            "Impulsa el Nacionalismo: Al dividir pueblos (como Italia y Alemania) en reinos dinásticos sin consultar su identidad, provocó movimientos de unificación.",
-            "Detona las Revoluciones de 1848: El autoritarismo restaurador generó alzamientos liberales y nacionales en toda Europa."
+            "Conecta con Metternich y la Santa Alianza: Creó el sistema policial y militar europeo para reprimir el liberalismo.",
+            "Detona el Nacionalismo: Al dejar divididas a Alemania e Italia y someter a Polonia o Bélgica, despertó el deseo de independencia.",
+            "Conduce a las Revoluciones de 1848: El bloqueo político acumulado estalló en la 'Primavera de los Pueblos'."
         ]
     },
     {
         id: "industrial",
         titulo: "Revolución Industrial",
         tipo: "causa",
-        etiqueta: "PROCESO ECONÓMICO",
-        descripcion: "Transición hacia una economía mecanizada y fabril iniciada en Gran Bretaña y expandida por Europa continental durante el siglo XIX.",
-        conectados: ["proletariado", "utopias", "romanticismo"],
+        etiqueta: "CAUSA ECONÓMICA",
+        descripcion: "Transformación productiva basada en la máquina de vapor, el carbón, el ferrocarril y la fábrica moderna. Consolidó el capitalismo industrial y transformó la vida urbana.",
+        conectados: ["clases", "utopias", "romanticismo"],
         justificacion: [
-            "Origina al Proletariado Urbano: La migración campo-ciudad creó una nueva clase trabajadora sometida a jornadas extenuantes.",
-            "Provoca las Utopías Sociales: La desigualdad industrial llevó a pensadores a diseñar sociedades alternativas.",
-            "Reacción del Romanticismo: Frente a la mecanización y contaminación urbana, los románticos idealizaron la naturaleza."
+            "Origina a la Burguesía y al Proletariado: Reemplazó la sociedad estamental por una sociedad de clases definida por el capital.",
+            "Motiva las Utopías Sociales: La pobreza obrera y el trabajo infantil llevaron a reformadores a proponer modelos alternativos.",
+            "Provoca la reacción del Romanticismo: Los artistas románticos rechazaron la mecanización y la destrucción de la naturaleza."
         ]
     },
     {
-        id: "proletariado",
+        id: "metternich",
+        titulo: "Metternich y Santa Alianza",
+        tipo: "actor",
+        etiqueta: "ACTORES CONSERVADORES",
+        descripcion: "El canciller austríaco Klemens von Metternich fue el arquitecto del orden conservador europeo, defendiendo el derecho de intervención para sofocar constituciones liberales.",
+        conectados: ["viena", "rev1848"],
+        justificacion: [
+            "Ejecutor del Congreso de Viena: Impuso censura de prensa y persecución contra sociedades secretas como los Carbonarios italianos.",
+            "Caída en 1848: Las protestas populares en Viena obligaron a Metternich a dimitir y huir en marzo de 1848."
+        ]
+    },
+    {
+        id: "clases",
         titulo: "Burguesía y Proletariado",
         tipo: "actor",
         etiqueta: "ACTORES SOCIALES",
-        descripcion: "Nuevos grupos sociales antagónicos surgidos del capitalismo industrial: los dueños del capital y las fábricas frente a los trabajadores asalariados.",
-        conectados: ["utopias", "revoluciones1848"],
+        descripcion: "La burguesía exigía participación política y libre comercio frente a la nobleza, mientras el proletariado luchaba por salarios dignos, reducción de jornada y derecho de asociación.",
+        conectados: ["industrial", "utopias", "rev1848"],
         justificacion: [
-            "Motor de las Utopías Sociales: Las condiciones de vida obrera inspiraron las cooperativas de Robert Owen y los falansterios de Fourier.",
-            "Protagonistas en 1848: Demandaron derechos laborales y sufragio en las barricadas europeas."
+            "Protagonistas de las Utopías Sociales: Fueron el objeto de estudio y experimentación social de Owen y Fourier.",
+            "Fuerza de choque en 1848: La alianza temporal (y luego ruptura) entre burgueses y obreros marcó el rumbo de 1848."
         ]
     },
     {
         id: "utopias",
-        titulo: "Utopías Sociales",
+        titulo: "Utopías Sociales (Owen, Fourier)",
         tipo: "consecuencia",
         etiqueta: "IDEOLOGÍA SOCIAL",
-        descripcion: "Corriente impulsada por Saint-Simon, Charles Fourier y Robert Owen que proponía reformar pacíficamente la sociedad mediante comunidades igualitarias.",
-        conectados: ["industrial", "proletariado"],
+        descripcion: "Corriente del primer socialismo (Saint-Simon, Fourier, Owen) que buscó superar la explotación industrial creando comunidades cooperativas modelo (falansterios y colonias).",
+        conectados: ["industrial", "clases"],
         justificacion: [
-            "Respuesta directa a la Revolución Industrial: Buscaba corregir los efectos sociales del libre mercado sin recurrir inicialmente a la lucha armada."
+            "Respuesta pacífica a la Revolución Industrial: Planteó que la educación, la ciencia y la cooperación eliminarían la miseria obrera."
         ]
     },
     {
         id: "romanticismo",
-        titulo: "Romanticismo",
+        titulo: "Romanticismo (1800–1850)",
         tipo: "consecuencia",
         etiqueta: "MOVIMIENTO CULTURAL",
-        descripcion: "Movimiento artístico y filosófico que priorizó la emoción, la libertad individual, la naturaleza y el espíritu popular (Volksgeist) frente al racionalismo.",
-        conectados: ["nacionalismo", "industrial"],
+        descripcion: "Movimiento cultural (Víctor Hugo, Byron, Delacroix, Herder) que exaltó el sentimiento, la rebeldía, la naturaleza salvaje y el espíritu propio de cada pueblo (Volksgeist).",
+        conectados: ["industrial", "nacionalismo"],
         justificacion: [
-            "Alimenta al Nacionalismo: Rescató el folclore, las lenguas y la historia medieval de cada pueblo, fortaleciendo la identidad nacional."
+            "Base cultural del Nacionalismo: Al rescatar las lenguas, leyendas medievales y folclore local, dio identidad simbólica a las naciones."
         ]
     },
     {
         id: "nacionalismo",
-        titulo: "Nacionalismo y 1848",
+        titulo: "Nacionalismo y Mazzini",
         tipo: "consecuencia",
-        etiqueta: "IDEOLOGÍA Y CONSECUENCIA",
-        descripcion: "Doctrina que sostiene que cada nación tiene derecho a constituirse como Estado soberano, estallando en la 'Primavera de los Pueblos' de 1848.",
-        conectados: ["viena", "romanticismo", "proletariado"],
+        etiqueta: "IDEOLOGÍA POLÍTICA",
+        descripcion: "Movimiento que defendía que cada nación con historia y lengua propias debía formar un Estado independiente y soberano (ej. 'La Joven Italia' de Giuseppe Mazzini).",
+        conectados: ["viena", "romanticismo", "rev1848"],
         justificacion: [
-            "Desafío al orden de Viena: Cuestionó los imperios plurinacionales (como el Austríaco) y sentó las bases de las futuras unificaciones de Italia y Alemania."
+            "Desafío directo al Congreso de Viena: Cuestionó la existencia de imperios multinacionales como el Austríaco y el Otomano."
+        ]
+    },
+    {
+        id: "rev1848",
+        titulo: "Revoluciones de 1848",
+        tipo: "acontecimiento",
+        etiqueta: "ACONTECIMIENTO CLAVE",
+        descripcion: "Conocida como la 'Primavera de los Pueblos', fue una oleada revolucionaria simultánea en Francia, Alemania, Italia y Austria que combinó demandas liberales, nacionales y obreras.",
+        conectados: ["viena", "metternich", "clases", "nacionalismo"],
+        justificacion: [
+            "Síntesis de todo el proceso: Demostró que el orden post-napoleónico había caducado y que las masas urbanas y nacionales eran los nuevos actores de la historia."
         ]
     }
 ];
@@ -199,7 +375,7 @@ function dibujarLineas() {
                 line.setAttribute("y1", posiciones[nodo.id].y);
                 line.setAttribute("x2", posiciones[destinoId].x);
                 line.setAttribute("y2", posiciones[destinoId].y);
-                line.setAttribute("stroke", "rgba(96, 165, 250, 0.35)");
+                line.setAttribute("stroke", "rgba(147, 197, 253, 0.35)");
                 line.setAttribute("stroke-width", "2");
                 networkLines.appendChild(line);
             }
@@ -237,10 +413,10 @@ function filtrarRed(categoria, boton) {
 // 3. INTERACTIVIDAD DE CAPÍTULOS DE VIDEO
 // ==========================================
 const capitulosVideo = [
-    "<strong>Tesis del segmento:</strong> Analiza cómo la reorganización territorial de 1815 ignoró los principios de soberanía nacional, generando un conflicto estructural entre legitimidad dinástica y voluntad popular.",
-    "<strong>Tesis del segmento:</strong> Explica el paso del taller artesanal a la fábrica mecanizada, el crecimiento acelerado de ciudades como Manchester y el surgimiento de la cuestión social.",
-    "<strong>Tesis del segmento:</strong> Examina los proyectos comunitarios de Robert Owen y Charles Fourier como primeros intentos de humanizar el trabajo industrial.",
-    "<strong>Tesis del segmento:</strong> Muestra cómo escritores y músicos románticos despertaron la conciencia nacional que desembocó en las revoluciones de 1848."
+    "<strong>Evidencia y tesis:</strong> Se analiza cómo el mapa trazado por Metternich en 1815 subordinó el principio de nacionalidad a los intereses de las casas reales, creando una tensión permanente en Europa central e Italia.",
+    "<strong>Evidencia y tesis:</strong> Se documenta el crecimiento explosivo de ciudades industriales como Manchester, el impacto del vapor y el nacimiento del movimiento obrero frente a la falta de leyes laborales.",
+    "<strong>Evidencia y tesis:</strong> Se explican las experiencias concretas de New Lanark (Robert Owen) y los falansterios (Charles Fourier) como intentos de reorganizar la producción con justicia social.",
+    "<strong>Evidencia y tesis:</strong> Se muestra cómo la pintura (Delacroix), la literatura y la música romántica impulsaron las revoluciones liberales y nacionales de 1830 y 1848."
 ];
 
 function mostrarCapitulo(indice, boton) {
@@ -253,10 +429,12 @@ function mostrarCapitulo(indice, boton) {
 // 4. RECURSO INTERACTIVO: LÍNEA DE TIEMPO Y COMPARADOR
 // ==========================================
 const hitosHistoricos = [
-    { anio: "1815", titulo: "Congreso de Viena", eje: "politica", texto: "Restauración monárquica y nuevo equilibrio europeo tras Waterloo." },
-    { anio: "1819", titulo: "Obra de Saint-Simon y Owen", eje: "industria", texto: "Primeros planteamientos de reorganización industrial y cooperativismo." },
-    { anio: "1830", titulo: "Oleada Revolucionaria y Romanticismo", eje: "cultura", texto: "Independencia de Bélgica y auge del arte romántico comprometido (Delacroix)." },
-    { anio: "1848", titulo: "La Primavera de los Pueblos", eje: "politica", texto: "Revoluciones liberales, nacionales y obreras simultáneas en Europa." }
+    { anio: "1815", titulo: "Congreso de Viena y Santa Alianza", eje: "restauracion", texto: "Tras Waterloo, las potencias restauran el absolutismo y redibujan Europa bajo el principio de equilibrio." },
+    { anio: "1816", titulo: "Colonia Cooperativa de New Lanark", eje: "industria", texto: "Robert Owen demuestra en Escocia que reducir la jornada laboral y educar a los hijos de obreros mejora la sociedad." },
+    { anio: "1821–1829", titulo: "Independencia de Grecia", eje: "nacionalismo", texto: "Grecia se libera del Imperio Otomano con apoyo de intelectuales románticos europeos como Lord Byron." },
+    { anio: "1830", titulo: "Revoluciones de 1830 y Delacroix", eje: "nacionalismo", texto: "Cae el absolutismo en Francia, Bélgica logra su independencia y Delacroix pinta 'La Libertad guiando al pueblo'." },
+    { anio: "1833", titulo: "Factory Act en Gran Bretaña", eje: "industria", texto: "Primera ley relevante que limita el trabajo infantil en las fábricas textiles tras las denuncias sociales." },
+    { anio: "1848", titulo: "La Primavera de los Pueblos", eje: "restauracion", texto: "Estallido revolucionario en París, Viena, Berlín y Milán que marca el fin definitivo del sistema de Metternich." }
 ];
 
 function renderTimeline() {
@@ -282,19 +460,19 @@ function renderTimeline() {
 
 const datosCorrientes = {
     romanticismo: {
-        idea: "Primacía del sentimiento, la subjetividad, la libertad creadora y la exaltación de la naturaleza frente al industrialismo.",
-        actores: "Lord Byron, Víctor Hugo, Eugène Delacroix, Caspar David Friedrich.",
-        impacto: "Revalorizó la historia medieval y las tradiciones populares, sirviendo de base cultural al nacionalismo."
+        idea: "Rechazó el racionalismo frío de la Ilustración y la fealdad de las ciudades industriales, reivindicando la emoción, la libertad individual, la naturaleza y la historia medieval.",
+        actores: "Johann Gottfried Herder, Lord Byron, Víctor Hugo, Eugène Delacroix, Caspar David Friedrich.",
+        impacto: "Despertó el interés por las lenguas, canciones y tradiciones populares, proporcionando la base emocional y cultural del nacionalismo europeo."
     },
     nacionalismo: {
-        idea: "La nación (unida por lengua, historia y cultura) es la única fuente legítima de soberanía política.",
-        actores: "Giuseppe Mazzini, movimientos de unificación italiana y alemana, revolucionarios de 1848.",
-        impacto: "Cuestionó los imperios multinacionales del Congreso de Viena y reconfiguró el mapa europeo."
+        idea: "Sostenía que la soberanía reside en la nación —entendida como una comunidad unida por historia, lengua y cultura— y no en el patrimonio hereditario de un rey.",
+        actores: "Giuseppe Mazzini ('La Joven Italia'), Simón Bolívar (en América), movimientos unificadores de Alemania e Italia.",
+        impacto: "Desafió las fronteras impuestas por el Congreso de Viena en 1815 y condujo a la creación de nuevos Estados nacionales en el siglo XIX."
     },
     utopias: {
-        idea: "Búsqueda de una sociedad justa e igualitaria mediante comunidades cooperativas y reforma moral sin lucha violenta.",
-        actores: "Henri de Saint-Simon, Charles Fourier, Robert Owen.",
-        impacto: "Sentó las bases del cooperativismo moderno y del pensamiento socialista posterior."
+        idea: "Denunció las desigualdades extremas del capitalismo industrial, proponiendo comunidades igualitarias basadas en la cooperación y la planificación racional del trabajo.",
+        actores: "Henri de Saint-Simon, Charles Fourier (falansterios) y Robert Owen (cooperativismo).",
+        impacto: "Sentó las bases del movimiento cooperativo moderno, del sindicalismo y de las corrientes socialistas posteriores."
     }
 };
 
@@ -303,9 +481,9 @@ function compararCorriente(clave, boton) {
     boton.classList.add("active");
     const info = datosCorrientes[clave];
     document.getElementById("comparatorResult").innerHTML = `
-        <div><strong>Idea Central:</strong><p>${info.idea}</p></div>
-        <div><strong>Referentes / Actores:</strong><p>${info.actores}</p></div>
-        <div><strong>Impacto Histórico:</strong><p>${info.impacto}</p></div>
+        <div><strong>¿Qué planteaba?:</strong><p>${info.idea}</p></div>
+        <div><strong>Exponentes clave:</strong><p>${info.actores}</p></div>
+        <div><strong>Impacto histórico:</strong><p>${info.impacto}</p></div>
     `;
 }
 

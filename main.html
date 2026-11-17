@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia Conectada | Siglo XIX: Revolución y Reacción</title>
+    <title>Historia Conectada | Mundo Post-Napoleónico y Siglo XIX</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN (6 Páginas) -->
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
     <header class="navbar">
         <div class="nav-left">
             <a href="#" class="logo" onclick="cambiarPagina('inicio'); return false;">
-                <div class="brand-badge">H19</div>
+                <span class="logo-title">HISTORIA XIX</span>
+                <span class="logo-sub">PROYECTO DE INVESTIGACIÓN</span>
             </a>
             <nav class="nav-links">
-                <a href="#" class="nav-tab active" data-page="inicio" onclick="cambiarPagina('inicio'); return false;">1. INICIO</a>
-                <a href="#" class="nav-tab" data-page="contexto" onclick="cambiarPagina('contexto'); return false;">2. CONTEXTO</a>
-                <a href="#" class="nav-tab" data-page="red-historica" onclick="cambiarPagina('red-historica'); return false;">3. RED DE RELACIONES</a>
-                <a href="#" class="nav-tab" data-page="audiovisual" onclick="cambiarPagina('audiovisual'); return false;">4. VIDEO</a>
-                <a href="#" class="nav-tab" data-page="recurso-interactivo" onclick="cambiarPagina('recurso-interactivo'); return false;">5. EXPLORADOR</a>
-                <a href="#" class="nav-tab" data-page="conclusiones" onclick="cambiarPagina('conclusiones'); return false;">6. CONCLUSIONES</a>
+                <a href="#" class="nav-tab active" data-page="inicio" onclick="cambiarPagina('inicio'); return false;">Inicio</a>
+                <a href="#" class="nav-tab" data-page="contexto" onclick="cambiarPagina('contexto'); return false;">Contexto histórico</a>
+                <a href="#" class="nav-tab" data-page="red-historica" onclick="cambiarPagina('red-historica'); return false;">Red de relaciones</a>
+                <a href="#" class="nav-tab" data-page="audiovisual" onclick="cambiarPagina('audiovisual'); return false;">Video</a>
+                <a href="#" class="nav-tab" data-page="recurso-interactivo" onclick="cambiarPagina('recurso-interactivo'); return false;">Explorador</a>
+                <a href="#" class="nav-tab" data-page="conclusiones" onclick="cambiarPagina('conclusiones'); return false;">Conclusiones</a>
             </nav>
         </div>
         <div class="nav-right">
@@ -33,26 +34,53 @@
     <!-- CONTENEDOR PRINCIPAL DE PÁGINAS -->
     <main class="pages-wrapper">
 
-        <!-- PÁGINA 1: INICIO -->
+        <!-- 1. INICIO -->
         <section id="inicio" class="page-view active-page">
-            <!-- BANNER CON IMAGEN (Solo engloba título y pregunta central) -->
+            
+            <!-- HERO NEGRO CON IMAGEN A LA DERECHA -->
             <div class="hero">
-                <div class="hero-content">
-                    <span class="hero-tag">EJE TEMÁTICO 01 • SIGLO XIX (1815 – 1848)</span>
-                    <h1 class="hero-title">MUNDO POST-NAPOLEÓNICO, REVOLUCIÓN INDUSTRIAL Y NUEVAS IDEOLOGÍAS</h1>
-                    <div class="central-question-box">
-                        <span class="question-label"><i class="fa-solid fa-compass"></i> PREGUNTA HISTÓRICA CENTRAL</span>
-                        <p class="hero-question">¿De qué manera la tensión entre el orden restaurador post-napoleónico y las transformaciones de la Revolución Industrial impulsó el surgimiento del Nacionalismo, el Romanticismo y las utopías sociales en el siglo XIX?</p>
+                <div class="hero-inner">
+                    <div class="hero-left">
+                        <h1 class="hero-title">Mundo post-napoleónico, Revolución Industrial y nuevas ideologías</h1>
+                        <p class="hero-subtitle">**Eje temático: Utopías sociales, Romanticismo y Nacionalismo (1815 – 1848).**</p>
+                        
+                        <div class="hero-question-pill">
+                            <span>PREGUNTA HISTÓRICA CENTRAL</span>
+                        </div>
+                        <p class="hero-question-text">
+                            ¿De qué manera la tensión entre el orden restaurador post-napoleónico y las transformaciones de la Revolución Industrial impulsó el surgimiento del Romanticismo, el Nacionalismo y las utopías sociales en el siglo XIX?
+                        </p>
+                    </div>
+
+                    <div class="hero-right">
+                        <img src="portada.jpg" alt="Portada histórica" onerror="probarExtensiones(this, 'portada')">
+                        <div class="hero-image-fade"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- SECCIÓN DE INTEGRANTES DEBAJO DE LA IMAGEN Y ANTES DE LAS FUENTES -->
-            <div class="members-section">
-                <div class="section-header">
-                    <span class="section-kicker">EQUIPO DE INVESTIGACIÓN</span>
-                    <h2>INTEGRANTES Y TEMAS DE EXPOSICIÓN</h2>
+            <!-- SECCIÓN BLANCA EDITORIAL -->
+            <div class="intro-white-section">
+                <p class="intro-centered-text">
+                    Cuando los ejércitos de Napoleón Bonaparte cayeron definitivamente en Waterloo en 1815, las monarquías europeas intentaron restaurar el Antiguo Régimen y frenar cualquier brote revolucionario. Sin embargo, al intentar construir un orden que ignoraba el legado de la Revolución Francesa y el avance imparable de la Revolución Industrial, se encontraron con una realidad avasalladora: el surgimiento de las utopías sociales, el sueño romántico de libertad y la fuerza del nacionalismo desembocarían en la Primavera de los Pueblos.
+                </p>
+
+                <div class="intro-split-grid">
+                    <div class="intro-split-img">
+                        <img src="portada.jpg" alt="Europa después de Napoleón" onerror="probarExtensiones(this, 'portada')">
+                    </div>
+                    <div class="intro-split-text">
+                        <h2>¿Qué exploraremos en este proyecto?</h2>
+                        <p>
+                            Analizaremos de manera conectada cómo Europa vivió una profunda recomposición tras la caída de Napoleón. Primero examinaremos el orden conservador del Congreso de Viena (1815) y el impacto social de la industrialización; luego exploraremos en nuestra red histórica cómo las utopías sociales, el Romanticismo y el Nacionalismo respondieron a estas tensiones hasta el estallido revolucionario de 1848.
+                        </p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- FRANJA AZUL PIZARRA CON LOS 4 CUADROS DE INTEGRANTES -->
+            <div class="members-blue-section">
+                <h2 class="members-section-title">Integrantes del Equipo</h2>
 
                 <div class="members-grid">
                     <div class="member-card" onclick="seleccionarIntegrante(this)">
@@ -61,7 +89,8 @@
                         </div>
                         <div class="member-role">
                             <strong>[Nombre Integrante 1]</strong>
-                            <p>Expone: Contexto histórico y Mundo Post-Napoleónico</p>
+                            <span class="member-tag">Exposición • Parte 01</span>
+                            <p>Contexto histórico: Mundo Post-Napoleónico y Congreso de Viena (1815).</p>
                         </div>
                     </div>
 
@@ -71,7 +100,8 @@
                         </div>
                         <div class="member-role">
                             <strong>[Nombre Integrante 2]</strong>
-                            <p>Expone: Revolución Industrial y Utopías Sociales</p>
+                            <span class="member-tag">Exposición • Parte 02</span>
+                            <p>Revolución Industrial, cuestión social y Utopías Sociales.</p>
                         </div>
                     </div>
 
@@ -81,7 +111,8 @@
                         </div>
                         <div class="member-role">
                             <strong>[Nombre Integrante 3]</strong>
-                            <p>Expone: Romanticismo y Nacionalismo</p>
+                            <span class="member-tag">Exposición • Parte 03</span>
+                            <p>Romanticismo, Nacionalismo y las oleadas revolucionarias (1820–1848).</p>
                         </div>
                     </div>
 
@@ -91,55 +122,106 @@
                         </div>
                         <div class="member-role">
                             <strong>[Nombre Integrante 4]</strong>
-                            <p>Expone: Red de relaciones y Conclusiones</p>
+                            <span class="member-tag">Exposición • Parte 04</span>
+                            <p>Red de relaciones históricas, recurso interactivo y conclusiones.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
 
-        <!-- PÁGINA 2: CONTEXTO HISTÓRICO -->
+        <!-- 2. CONTEXTO HISTÓRICO (4 Cuadros con foto que abren vista detallada) -->
         <section id="contexto" class="page-view section-container">
             <div class="section-header">
-                <span class="section-kicker">PÁGINA 02 • PANORAMA DEL PERIODO</span>
-                <h2>CONTEXTO HISTÓRICO Y PROBLEMA ESTUDIADO</h2>
+                <span class="section-kicker">PÁGINA 02 • EL ESCENARIO EUROPEO (1815 – 1848)</span>
+                <h2>Contexto histórico y problema estudiado</h2>
+                <p class="section-desc">Tras la caída de Napoleón en 1815, Europa vivió el choque entre el intento monárquico por restaurar el pasado y el avance irreversible de la industria y las nuevas ideas. <strong>Haz clic en cualquiera de los 4 cuadros para explorar su desarrollo completo.</strong></p>
             </div>
-            <div class="context-grid">
-                <div class="context-card">
-                    <span class="card-tag">ORDEN POLÍTICO (1815)</span>
-                    <h3>La Restauración y el Congreso de Viena</h3>
-                    <p>Tras la derrota de Napoleón Bonaparte, las potencias europeas buscaron restaurar el Antiguo Régimen, frenar el liberalismo y redibujar las fronteras sin considerar las identidades nacionales, sembrando el descontento revolucionario de 1820, 1830 y 1848.</p>
-                </div>
-                <div class="context-card">
-                    <span class="card-tag">TRANSFORMACIÓN ECONÓMICA</span>
-                    <h3>La Revolución Industrial</h3>
-                    <p>La mecanización, el uso del vapor y el crecimiento fabril transformaron radicalmente la economía y la sociedad, consolidando a la burguesía industrial y dando origen al proletariado urbano bajo duras condiciones laborales.</p>
-                </div>
-                <div class="context-card">
-                    <span class="card-tag">RESPUESTA CULTURAL Y SOCIAL</span>
-                    <h3>Ideologías y Reacción</h3>
-                    <p>Frente al racionalismo ilustrado y la desigualdad industrial emergieron tres respuestas: el <strong>Romanticismo</strong> (exaltación del sentimiento y el pasado), el <strong>Nacionalismo</strong> (soberanía de los pueblos) y las <strong>Utopías Sociales</strong> (modelos comunitarios frente al capitalismo).</p>
-                </div>
+
+            <div class="context-highlight">
+                <h3><i class="fa-solid fa-landmark"></i> El Problema Histórico: Un Continente Dividido entre el Pasado y el Futuro</h3>
+                <p>Tras veinticinco años de guerras revolucionarias y expansión napoleónica que habían difundido las ideas de igualdad ante la ley y soberanía nacional, las potencias vencedoras (Austria, Rusia, Prusia y Gran Bretaña) se reunieron en el <strong>Congreso de Viena (1814-1815)</strong> para restaurar el Antiguo Régimen. Sin embargo, este orden conservador chocó frontalmente con la <strong>Revolución Industrial</strong>, detonando respuestas culturales, sociales y políticas que transformaron Europa.</p>
             </div>
-            <div class="page-nav-footer">
-                <button class="nav-step-btn" onclick="cambiarPagina('inicio')"><i class="fa-solid fa-arrow-left"></i> Anterior: Inicio</button>
-                <button class="nav-step-btn primary" onclick="cambiarPagina('red-historica')">Siguiente: Red de Relaciones <i class="fa-solid fa-arrow-right"></i></button>
+
+            <!-- 4 CUADROS INTERACTIVOS CON IMAGEN Y RESUMEN BREVE -->
+            <div class="context-grid-4">
+                <article class="topic-card" onclick="abrirDetalleTema('postnapoleonico')">
+                    <div class="topic-card-img">
+                        <img src="tema_napoleon.jpg" alt="Mundo Post-Napoleónico" onerror="probarExtensiones(this, 'tema_napoleon')">
+                        <span class="topic-badge">01 • MUNDO POST-NAPOLEÓNICO</span>
+                    </div>
+                    <div class="topic-card-body">
+                        <h3>La Restauración y el Congreso de Viena</h3>
+                        <p>El intento de las potencias europeas por restaurar las monarquías absolutas tras Waterloo (1815) y frenar el liberalismo.</p>
+                        <span class="topic-link">Explorar tema completo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </article>
+
+                <article class="topic-card" onclick="abrirDetalleTema('industrial')">
+                    <div class="topic-card-img">
+                        <img src="tema_industria.jpg" alt="Revolución Industrial" onerror="probarExtensiones(this, 'tema_industria')">
+                        <span class="topic-badge">02 • REVOLUCIÓN INDUSTRIAL</span>
+                    </div>
+                    <div class="topic-card-body">
+                        <h3>Fábricas, Vapor y Cuestión Social</h3>
+                        <p>La mecanización productiva, el nacimiento del proletariado urbano y las duras condiciones laborales del capitalismo fabril.</p>
+                        <span class="topic-link">Explorar tema completo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </article>
+
+                <article class="topic-card" onclick="abrirDetalleTema('utopias')">
+                    <div class="topic-card-img">
+                        <img src="tema_utopias.jpg" alt="Utopías Sociales" onerror="probarExtensiones(this, 'tema_utopias')">
+                        <span class="topic-badge">03 • UTOPÍAS SOCIALES</span>
+                    </div>
+                    <div class="topic-card-body">
+                        <h3>Alternativas frente al Capitalismo</h3>
+                        <p>Las propuestas comunitarias de Saint-Simon, Fourier y Owen para humanizar el trabajo y construir sociedades justas.</p>
+                        <span class="topic-link">Explorar tema completo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </article>
+
+                <article class="topic-card" onclick="abrirDetalleTema('romanticismo')">
+                    <div class="topic-card-img">
+                        <img src="tema_romanticismo.jpg" alt="Romanticismo y Nacionalismo" onerror="probarExtensiones(this, 'tema_romanticismo')">
+                        <span class="topic-badge">04 • ROMANTICISMO Y NACIONALISMO</span>
+                    </div>
+                    <div class="topic-card-body">
+                        <h3>Sentimiento, Identidad y Revolución</h3>
+                        <p>La exaltación de la libertad individual y el espíritu de los pueblos (Volksgeist) que impulsó las revoluciones de 1820 a 1848.</p>
+                        <span class="topic-link">Explorar tema completo <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- PÁGINA 3: RED INTERACTIVA DE RELACIONES HISTÓRICAS -->
+        <!-- VISTA DETALLADA DE CADA TEMA (Se abre al presionar uno de los 4 cuadros) -->
+        <section id="detalle-tema" class="page-view section-container">
+            <div class="detail-top-bar">
+                <button class="back-topics-btn" onclick="cambiarPagina('contexto')">
+                    <i class="fa-solid fa-arrow-left"></i> Volver a los 4 ejes del Contexto Histórico
+                </button>
+                <div class="detail-switcher" id="detailSwitcher"></div>
+            </div>
+
+            <article class="topic-full-article" id="topicFullContainer"></article>
+        </section>
+
+        <!-- 3. RED INTERACTIVA DE RELACIONES HISTÓRICAS -->
         <section id="red-historica" class="page-view section-container bg-light">
             <div class="section-header">
-                <span class="section-kicker">PÁGINA 03 • ANÁLISIS SISTÉMICO</span>
-                <h2>RED INTERACTIVA DE RELACIONES HISTÓRICAS</h2>
-                <p class="section-desc">Haz clic en cualquier nodo para visualizar cómo se conecta con causas, actores, acontecimientos y consecuencias del proceso histórico.</p>
+                <span class="section-kicker">PÁGINA 03 • ANÁLISIS DE CAUSALIDAD</span>
+                <h2>Red interactiva de relaciones históricas</h2>
+                <p class="section-desc">Explora cómo los procesos políticos y económicos del siglo XIX conectan causas, actores históricos, acontecimientos y consecuencias ideológicas. Haz clic en cada nodo para ver su análisis.</p>
             </div>
 
             <div class="network-filters">
-                <button class="filter-btn active" onclick="filtrarRed('todos', this)">Todos los Nodos</button>
-                <button class="filter-btn" onclick="filtrarRed('causa', this)">Causas / Procesos</button>
-                <button class="filter-btn" onclick="filtrarRed('actor', this)">Actores</button>
-                <button class="filter-btn" onclick="filtrarRed('consecuencia', this)">Ideologías y Consecuencias</button>
+                <button class="filter-btn active" onclick="filtrarRed('todos', this)">Todos los Nodos (8)</button>
+                <button class="filter-btn" onclick="filtrarRed('causa', this)">Causas Estructurales</button>
+                <button class="filter-btn" onclick="filtrarRed('actor', this)">Actores y Pensadores</button>
+                <button class="filter-btn" onclick="filtrarRed('acontecimiento', this)">Acontecimientos</button>
+                <button class="filter-btn" onclick="filtrarRed('consecuencia', this)">Consecuencias e Ideologías</button>
             </div>
 
             <div class="network-layout">
@@ -151,27 +233,23 @@
                 <aside class="network-detail" id="networkDetail">
                     <span class="detail-badge" id="detailType">SELECCIONA UN NODO</span>
                     <h3 id="detailTitle">Explora las conexiones históricas</h3>
-                    <p id="detailDesc">Haz clic en uno de los nodos de la izquierda para analizar su rol histórico, fechas clave y sus conexiones directas con otros procesos del siglo XIX.</p>
+                    <p id="detailDesc">Haz clic en cualquier nodo del tablero oscuro para desplegar su explicación histórica, sus protagonistas y la justificación de sus vínculos con otros procesos.</p>
                     <div class="connections-box">
-                        <h4>Conexiones directas justificadas:</h4>
+                        <h4>Relaciones históricas justificadas:</h4>
                         <ul id="detailConnections">
-                            <li>Ningún nodo seleccionado aún.</li>
+                            <li>Selecciona un nodo para visualizar sus conexiones directas.</li>
                         </ul>
                     </div>
                 </aside>
             </div>
-            <div class="page-nav-footer">
-                <button class="nav-step-btn" onclick="cambiarPagina('contexto')"><i class="fa-solid fa-arrow-left"></i> Anterior: Contexto</button>
-                <button class="nav-step-btn primary" onclick="cambiarPagina('audiovisual')">Siguiente: Producción Audiovisual <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
         </section>
 
-        <!-- PÁGINA 4: PRODUCCIÓN AUDIOVISUAL INTEGRADA -->
+        <!-- 4. PRODUCCIÓN AUDIOVISUAL INTEGRADA -->
         <section id="audiovisual" class="page-view section-container">
             <div class="section-header">
                 <span class="section-kicker">PÁGINA 04 • DOCUMENTAL / REPORTAJE HISTÓRICO</span>
-                <h2>PRODUCCIÓN AUDIOVISUAL DEL EQUIPO</h2>
-                <p class="section-desc">Recurso audiovisual original diseñado para aportar evidencia histórica y responder a nuestra pregunta central.</p>
+                <h2>Producción audiovisual del equipo</h2>
+                <p class="section-desc">Recurso audiovisual original donde analizamos la evidencia histórica para responder a nuestra pregunta central.</p>
             </div>
 
             <div class="video-layout">
@@ -179,59 +257,56 @@
                     <div class="video-placeholder" id="videoContainer">
                         <i class="fa-solid fa-film"></i>
                         <h4>AQUÍ VA EL VIDEO ORIGINAL DEL EQUIPO</h4>
-                        <p>Inserta tu archivo MP4 local o enlace embebido en <code>main.html</code></p>
+                        <p>Reemplaza este bloque con tu archivo <code>video_equipo.mp4</code> o enlace de YouTube</p>
                     </div>
                 </div>
                 <div class="video-chapters">
-                    <h3>Guía de capítulos del video</h3>
-                    <p class="chapter-hint">Selecciona un segmento para revisar su tesis histórica:</p>
+                    <h3>Estructura argumentativa del video</h3>
+                    <p class="chapter-hint">Haz clic en cada bloque temático para consultar la tesis histórica desarrollada:</p>
                     <div class="chapter-list">
                         <button class="chapter-btn active" onclick="mostrarCapitulo(0, this)">
-                            <span>00:00</span> 1. De Waterloo al Congreso de Viena
+                            <span>00:00</span> 1. De Waterloo al Congreso de Viena (1815)
                         </button>
                         <button class="chapter-btn" onclick="mostrarCapitulo(1, this)">
-                            <span>02:15</span> 2. Máquinas, fábricas y cuestión social
+                            <span>02:10</span> 2. La Revolución Industrial y el nacimiento del proletariado
                         </button>
                         <button class="chapter-btn" onclick="mostrarCapitulo(2, this)">
-                            <span>04:40</span> 3. Utopías sociales frente al capitalismo
+                            <span>04:30</span> 3. Las Utopías Sociales: Owen, Fourier y Saint-Simon
                         </button>
                         <button class="chapter-btn" onclick="mostrarCapitulo(3, this)">
-                            <span>06:50</span> 4. Romanticismo y el despertar nacionalista
+                            <span>06:45</span> 4. Romanticismo, Nacionalismo y la Primavera de los Pueblos
                         </button>
                     </div>
                     <div class="chapter-summary" id="chapterSummary">
-                        <strong>Tesis del segmento:</strong> Analiza cómo la reorganización territorial de 1815 ignoró los principios de soberanía nacional, generando un conflicto estructural entre legitimidad dinástica y voluntad popular.
+                        <strong>Evidencia y tesis:</strong> Se analiza cómo el mapa trazado por Metternich en 1815 subordinó el principio de nacionalidad a los intereses de las casas reales, creando una tensión permanente en Europa central e Italia.
                     </div>
                 </div>
             </div>
-            <div class="page-nav-footer">
-                <button class="nav-step-btn" onclick="cambiarPagina('red-historica')"><i class="fa-solid fa-arrow-left"></i> Anterior: Red Histórica</button>
-                <button class="nav-step-btn primary" onclick="cambiarPagina('recurso-interactivo')">Siguiente: Explorador Interactivo <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
         </section>
 
-        <!-- PÁGINA 5: RECURSO INTERACTIVO ADICIONAL -->
+        <!-- 5. RECURSO INTERACTIVO ADICIONAL -->
         <section id="recurso-interactivo" class="page-view section-container bg-light">
             <div class="section-header">
-                <span class="section-kicker">PÁGINA 05 • HERRAMIENTA DE ANÁLISIS</span>
-                <h2>EXPLORADOR CRONOLÓGICO Y COMPARADOR DE CORRIENTES</h2>
-                <p class="section-desc">Filtra los hitos históricos por eje temático o compara los postulados del Romanticismo, el Nacionalismo y el Socialismo Utópico.</p>
+                <span class="section-kicker">PÁGINA 05 • HERRAMIENTA DE CONSULTA Y COMPARACIÓN</span>
+                <h2>Explorador cronológico y comparador de corrientes</h2>
+                <p class="section-desc">Filtra los acontecimientos clave entre 1815 y 1848 según su dimensión histórica o compara los postulados del Romanticismo, Nacionalismo y Utopías Sociales.</p>
             </div>
 
             <div class="timeline-controls">
-                <label for="ejeSelect"><strong>Filtrar cronología por eje:</strong></label>
+                <label for="ejeSelect"><strong>Filtrar cronología por proceso:</strong></label>
                 <select id="ejeSelect" onchange="renderTimeline()">
-                    <option value="todos">Todos los acontecimientos (1815 - 1848)</option>
-                    <option value="politica">Mundo Post-Napoleónico y Nacionalismo</option>
+                    <option value="todos">Todos los hitos históricos (1815 – 1848)</option>
+                    <option value="restauracion">Mundo Post-Napoleónico y Restauración</option>
                     <option value="industria">Revolución Industrial y Utopías Sociales</option>
-                    <option value="cultura">Romanticismo</option>
+                    <option value="nacionalismo">Romanticismo y Oleadas Nacionalistas</option>
                 </select>
             </div>
 
             <div class="timeline-grid" id="timelineContainer"></div>
 
             <div class="comparator-box">
-                <h3>Comparador de Corrientes del Siglo XIX</h3>
+                <h3>Comparador Analítico de Corrientes del Siglo XIX</h3>
+                <p class="comp-subtitle">Selecciona una corriente para comparar qué criticaba, quiénes la impulsaron y cuál fue su legado histórico:</p>
                 <div class="comparator-buttons">
                     <button class="comp-btn active" onclick="compararCorriente('romanticismo', this)">Romanticismo</button>
                     <button class="comp-btn" onclick="compararCorriente('nacionalismo', this)">Nacionalismo</button>
@@ -239,44 +314,38 @@
                 </div>
                 <div class="comparator-result" id="comparatorResult"></div>
             </div>
-            <div class="page-nav-footer">
-                <button class="nav-step-btn" onclick="cambiarPagina('audiovisual')"><i class="fa-solid fa-arrow-left"></i> Anterior: Video</button>
-                <button class="nav-step-btn primary" onclick="cambiarPagina('conclusiones')">Siguiente: Conclusiones <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
         </section>
 
-        <!-- PÁGINA 6: CONCLUSIONES -->
+        <!-- 6. CONCLUSIONES -->
         <section id="conclusiones" class="page-view section-container">
             <div class="section-header">
-                <span class="section-kicker">PÁGINA 06 • SÍNTESIS HISTÓRICA</span>
-                <h2>CONCLUSIONES DEL EQUIPO</h2>
+                <span class="section-kicker">PÁGINA 06 • SÍNTESIS Y RESPUESTA FINAL</span>
+                <h2>Conclusiones del equipo</h2>
             </div>
             <div class="conclusions-box">
-                <p><strong>Respuesta a la pregunta central:</strong> El siglo XIX europeo no puede comprenderse como una suma de hechos aislados, sino como un proceso interconectado donde la reacción política del Congreso de Viena (1815) y la aceleración económica de la Revolución Industrial actuaron como catalizadores de nuevas formas de pensar y organizar la sociedad.</p>
-                <p>Mientras la industrialización generó riqueza sin precedentes a costa de profundas desigualdades urbanas —motivando las propuestas comunitarias de los <strong>socialistas utópicos</strong>—, la imposición de fronteras dinásticas y el desencanto con el racionalismo frío impulsaron tanto la sensibilidad estética del <strong>Romanticismo</strong> como los movimientos de liberación del <strong>Nacionalismo</strong>, culminando en el ciclo revolucionario de 1848.</p>
-            </div>
-            <div class="page-nav-footer">
-                <button class="nav-step-btn" onclick="cambiarPagina('recurso-interactivo')"><i class="fa-solid fa-arrow-left"></i> Anterior: Explorador</button>
-                <button class="nav-step-btn primary" onclick="cambiarPagina('inicio')"><i class="fa-solid fa-rotate-left"></i> Volver al Inicio</button>
+                <h3>Respuesta fundamentada a la pregunta histórica central</h3>
+                <p><strong>1. La doble revolución como motor del cambio:</strong> Como sostiene el historiador Eric Hobsbawm, el siglo XIX estuvo marcado por la interacción entre las consecuencias políticas de la era napoleónica y la transformación económica de la Revolución Industrial. El intento del Congreso de Viena (1815) por restaurar un orden absolutista resultó inviable frente a una sociedad que estaba cambiando material y culturalmente.</p>
+                <p><strong>2. Respuestas ideológicas frente a la crisis:</strong> Las nuevas corrientes del periodo nacieron como respuestas directas a estas tensiones. Frente a la explotación fabril surgieron las <strong>utopías sociales</strong> buscando justicia comunitaria; frente al mecanicismo frío nació el <strong>Romanticismo</strong> reivindicando la subjetividad y las raíces culturales; y frente a las fronteras impuestas por los imperios emergió el <strong>Nacionalismo</strong>, convirtiendo la identidad cultural en un proyecto político de soberanía.</p>
+                <p><strong>3. Legado hacia la modernidad:</strong> Aunque las revoluciones de 1848 fueron reprimidas en el corto plazo, consolidaron la agenda política del mundo contemporáneo: los derechos laborales, la participación ciudadana, el Estado-nación y la sensibilidad artística moderna.</p>
             </div>
         </section>
 
     </main>
 
-    <!-- PIE DE PÁGINA GLOBAL: FUENTES UTILIZADAS (Siempre abajo en todas las páginas) -->
+    <!-- 7. FUENTES BIBLIOGRÁFICAS (Siempre en la parte inferior) -->
     <footer class="sources-footer">
         <div class="footer-inner">
-            <span class="section-kicker" style="color: #66b2ff;">SUSTENTO ACADÉMICO DEL PROYECTO</span>
-            <h3>FUENTES UTILIZADAS</h3>
+            <span class="section-kicker" style="color: #93c5fd;">SUSTENTO ACADÉMICO Y DOCUMENTAL</span>
+            <h3>Fuentes utilizadas</h3>
             <ul class="sources-list">
-                <li><strong>Hobsbawm, E. (2009).</strong> <em>La era de la revolución, 1789-1848</em>. Crítica. (Análisis de la doble revolución: industrial en Inglaterra y política en Francia).</li>
-                <li><strong>Osterhammel, J. (2015).</strong> <em>La transformación del mundo: Una historia global del siglo XIX</em>. Crítica.</li>
-                <li><strong>Berlin, I. (2000).</strong> <em>Las raíces del romanticismo</em>. Taurus.</li>
-                <li><strong>Engels, F. (1880).</strong> <em>Del socialismo utópico al socialismo científico</em>. (Referencia sobre Saint-Simon, Fourier y Owen).</li>
-                <li><strong>Fuentes primarias:</strong> Acta Final del Congreso de Viena (1815) y Manifiestos de la Primavera de los Pueblos (1848).</li>
+                <li><strong>Hobsbawm, E. (2009).</strong> <em>La era de la revolución, 1789-1848</em>. Barcelona: Crítica. (Capítulos 3, 6 y 7: Congreso de Viena, Revolución Industrial e Ideologías).</li>
+                <li><strong>Osterhammel, J. (2015).</strong> <em>La transformación del mundo: Una historia global del siglo XIX</em>. Barcelona: Crítica.</li>
+                <li><strong>Berlin, I. (2000).</strong> <em>Las raíces del romanticismo</em>. Madrid: Taurus. (Análisis del movimiento romántico y su vínculo con el nacionalismo alemán y europeo).</li>
+                <li><strong>Engels, F. (1880).</strong> <em>Del socialismo utópico al socialismo científico</em>. (Análisis histórico sobre Saint-Simon, Charles Fourier y Robert Owen).</li>
+                <li><strong>Documentos históricos primarios:</strong> <em>Acta Final del Congreso de Viena</em> (9 de junio de 1815) y <em>Manifiesto de la Joven Italia</em> de Giuseppe Mazzini (1831).</li>
             </ul>
             <div class="ai-disclosure">
-                <strong>Declaración de autoría y uso de herramientas (CCOMP):</strong> Estructura base HTML/CSS/JS asistida mediante IA generativa, adaptada, documentada y poblada con datos históricos verificados por los integrantes del equipo.
+                <strong>Declaración de transparencia y autoría (CCOMP):</strong> Estructura base en HTML5, CSS3 y JavaScript desarrollada con apoyo de IA generativa y adaptada, depurada y sustentada históricamente por los integrantes del equipo.
             </div>
         </div>
     </footer>
