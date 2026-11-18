@@ -197,7 +197,7 @@
         </section>
 
         <!-- VISTA DETALLADA DE CADA TEMA -->
-        <section id="detalle-tema" class="page-view section-container">
+        <section id="detalle-tema" class="page-view section-container wide-page">
             <div class="detail-top-bar">
                 <button class="back-topics-btn" onclick="cambiarPagina('contexto')">
                     <i class="fa-solid fa-arrow-left"></i> Volver a los 4 ejes del Contexto Histórico
@@ -243,41 +243,154 @@
             </div>
         </section>
 
-        <!-- 4. PRODUCCIÓN AUDIOVISUAL INTEGRADA -->
-        <section id="audiovisual" class="page-view section-container">
-            <div class="section-header">
+        <!-- 4. PRODUCCIÓN AUDIOVISUAL INTEGRADA + VIDEOS RECOMENDADOS -->
+        <section id="audiovisual" class="page-view section-container wide-page">
+            <div class="section-header" style="text-align: center;">
                 <span class="section-kicker">PÁGINA 04 • DOCUMENTAL / REPORTAJE HISTÓRICO</span>
                 <h2>Producción audiovisual del equipo</h2>
-                <p class="section-desc">Recurso audiovisual original donde analizamos la evidencia histórica para responder a nuestra pregunta central.</p>
+                <p class="section-desc" style="margin: 8px auto 0;">Recurso audiovisual original donde analizamos la evidencia histórica para responder a nuestra pregunta central.</p>
             </div>
 
-            <div class="video-layout">
-                <div class="video-wrapper">
-                    <div class="video-placeholder" id="videoContainer">
-                        <i class="fa-solid fa-film"></i>
-                        <h4>AQUÍ VA EL VIDEO ORIGINAL DEL EQUIPO</h4>
-                        <p>Reemplaza este bloque con tu archivo <code>video_equipo.mp4</code> o enlace de YouTube</p>
+            <!-- VIDEO DEL EQUIPO CENTRADO EN EL MEDIO -->
+            <div class="video-center-wrapper">
+                <div class="video-placeholder" id="videoContainer">
+                    <i class="fa-solid fa-film"></i>
+                    <h4>AQUÍ VA EL VIDEO ORIGINAL DEL EQUIPO</h4>
+                    <p>Reemplaza este bloque con tu archivo <code><video src="video_equipo.mp4" controls></video></code> o enlace de YouTube</p>
+                </div>
+            </div>
+
+            <!-- ESPACIO INFERIOR: VIDEOS DE YOUTUBE PARA ENTENDER MÁS CADA TEMA -->
+            <div class="youtube-library-section">
+                <div class="section-header">
+                    <span class="section-kicker">RECURSOS DE APOYO PARA APRENDER MÁS</span>
+                    <h2>Videos recomendados para comprender mejor cada tema</h2>
+                    <p class="section-desc">Si deseas profundizar en los contenidos de nuestra investigación, aquí tienes una selección de videos explicativos divididos por cada eje temático.</p>
+                </div>
+
+                <!-- MUNDO POST-NAPOLEÓNICO -->
+                <div class="yt-topic-block">
+                    <div class="yt-topic-header">
+                        <h3>Mundo Post-Napoleónico</h3>
+                        <p>La caída de Napoleón, el equilibrio de poderes en 1814–1815 y la Europa de la Restauración.</p>
+                    </div>
+                    <div class="yt-videos-grid">
+                        <div class="yt-card">
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/ypKxEuZZFL0" title="Video 1 Mundo Post-Napoleónico" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/-NW9rv7Idz4" title="Video 2 Mundo Post-Napoleónico" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/e11QVKz-0LU" title="Video 3 Mundo Post-Napoleónico" allowfullscreen></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="video-chapters">
-                    <h3>Estructura argumentativa del video</h3>
-                    <p class="chapter-hint">Haz clic en cada bloque temático para consultar la tesis histórica desarrollada:</p>
-                    <div class="chapter-list">
-                        <button class="chapter-btn active" onclick="mostrarCapitulo(0, this)">
-                            <span>00:00</span> 1. De Waterloo al Congreso de Viena (1815)
-                        </button>
-                        <button class="chapter-btn" onclick="mostrarCapitulo(1, this)">
-                            <span>02:10</span> 2. La Revolución Industrial y el nacimiento del proletariado
-                        </button>
-                        <button class="chapter-btn" onclick="mostrarCapitulo(2, this)">
-                            <span>04:30</span> 3. Las Utopías Sociales: Owen, Fourier y Saint-Simon
-                        </button>
-                        <button class="chapter-btn" onclick="mostrarCapitulo(3, this)">
-                            <span>06:45</span> 4. Romanticismo, Nacionalismo y la Primavera de los Pueblos
-                        </button>
+
+                <!-- REVOLUCIÓN INDUSTRIAL -->
+                <div class="yt-topic-block">
+                    <div class="yt-topic-header">
+                        <h3>Revolución Industrial</h3>
+                        <p>La máquina de vapor, el surgimiento de las fábricas, el ferrocarril y la cuestión social.</p>
                     </div>
-                    <div class="chapter-summary" id="chapterSummary">
-                        <strong>Evidencia y tesis:</strong> Se analiza cómo el mapa trazado por Metternich y Castlereagh en 1815 subordinó el principio de nacionalidad al equilibrio de poder entre las grandes potencias.
+                    <div class="yt-videos-grid">
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • REVOLUCIÓN INDUSTRIAL</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • REVOLUCIÓN INDUSTRIAL</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • REVOLUCIÓN INDUSTRIAL</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UTOPÍAS SOCIALES -->
+                <div class="yt-topic-block">
+                    <div class="yt-topic-header">
+                        <h3>Utopías Sociales</h3>
+                        <p>Las propuestas cooperativas y comunitarias de Robert Owen, Charles Fourier y Saint-Simon.</p>
+                    </div>
+                    <div class="yt-videos-grid">
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • UTOPÍAS SOCIALES</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • UTOPÍAS SOCIALES</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • UTOPÍAS SOCIALES</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROMANTICISMO Y NACIONALISMO -->
+                <div class="yt-topic-block">
+                    <div class="yt-topic-header">
+                        <h3>Romanticismo y Nacionalismo</h3>
+                        <p>El espíritu de los pueblos (Volksgeist), la libertad artística y las revoluciones de 1820 a 1848.</p>
+                    </div>
+                    <div class="yt-videos-grid">
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • ROMANTICISMO Y NACIONALISMO</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • ROMANTICISMO Y NACIONALISMO</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
+
+                        <div class="yt-card">
+                            <div class="yt-embed-box yt-placeholder">
+                                <i class="fa-brands fa-youtube"></i>
+                                <span>VIDEO YOUTUBE • ROMANTICISMO Y NACIONALISMO</span>
+                                <small>Pega aquí el enlace embed de YouTube</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

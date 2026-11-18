@@ -22,6 +22,7 @@ function probarExtensiones(img, nombreBase) {
         `${nombreBase}.webp`,
         `img/${nombreBase}.jpg`,
         `img/${nombreBase}.png`,
+        `img/${nombreBase}.jpeg`,
         `imagenes/${nombreBase}.jpg`,
         `imagenes/${nombreBase}.png`
     ];
@@ -108,13 +109,6 @@ const temasDesarrollados = {
                 ]
             }
         ],
-        datosClave: [
-            "<strong>Sede e inicio:</strong> Palacio del Hofburg (Viena), inaugurado el 1 de noviembre de 1814 tras la abdicación de Napoleón y su exilio en Elba.",
-            "<strong>Cuádruple Alianza:</strong> Reino Unido, Rusia, Austria y Prusia, articulados diplomáticamente por Lord Castlereagh.",
-            "<strong>Nuevo mapa europeo:</strong> Rusia obtuvo gran parte de Polonia y Finlandia; Suecia recibió Noruega; Prusia ganó Renania, Westfalia y parte de Sajonia; Austria incorporó Lombardía y el Véneto.",
-            "<strong>Estados-tapón contra Francia:</strong> Unión de Bélgica y Holanda en el Reino de los Países Bajos, y ampliación del Reino de Cerdeña con Génova.",
-            "<strong>Acta Final (9 de junio de 1815):</strong> Firmada nueve días antes de la derrota definitiva de Napoleón en Waterloo."
-        ],
         protagonistas: [
             {
                 nombre: "Lord Castlereagh",
@@ -151,7 +145,7 @@ const temasDesarrollados = {
                 pie: "De Elba a Waterloo (1815): tras escapar de Elba durante los Cien Días, Napoleón fue derrotado definitivamente por Wellington."
             }
         ],
-        tieneComparadorMapas: true
+        tieneMapaViena: true
     },
     industrial: {
         etiqueta: "EJE 02 • REVOLUCIÓN INDUSTRIAL (SIGLO XIX)",
@@ -172,11 +166,6 @@ const temasDesarrollados = {
                     "Millones de campesinos emigraron a ciudades industriales como Manchester, Birmingham o Lyon, formando el <strong>proletariado urbano</strong>. Hombres, mujeres y niños trabajaban entre 14 y 16 horas diarias en fábricas insalubres, sin seguro médico ni descanso dominical, frente a una <strong>burguesía industrial</strong> dueña del capital."
                 ]
             }
-        ],
-        datosClave: [
-            "<strong>Nueva estructura de clases:</strong> La burguesía (dueña de fábricas y bancos) y el proletariado (trabajadores asalariados).",
-            "<strong>Primeras protestas obreras:</strong> El movimiento ludita (destrucción de máquinas) y las primeras asociaciones sindicales (Trade Unions).",
-            "<strong>Revolución en el transporte:</strong> Inauguración de las primeras líneas ferroviarias modernas (1825–1830)."
         ],
         protagonistas: [
             {
@@ -227,11 +216,6 @@ const temasDesarrollados = {
                     "Desde las fábricas modelo de <strong>Robert Owen</strong> en Escocia hasta los <em>falansterios</em> ideados por <strong>Charles Fourier</strong> en Francia, estas propuestas buscaban dignificar el trabajo, eliminar la miseria obrera y armonizar la producción con el bienestar humano."
                 ]
             }
-        ],
-        datosClave: [
-            "<strong>Cooperativismo laboral:</strong> Reducción de jornada, prohibición del trabajo infantil y educación gratuita para hijos de obreros.",
-            "<strong>Organización comunitaria:</strong> Creación de comunidades autosuficientes basadas en el trabajo vocacional y la propiedad compartida.",
-            "<strong>Reforma pacífica:</strong> Confianza en la filantropía, la ciencia y el ejemplo práctico para transformar la sociedad."
         ],
         protagonistas: [
             {
@@ -284,11 +268,6 @@ const temasDesarrollados = {
                 ]
             }
         ],
-        datosClave: [
-            "<strong>Volksgeist (Espíritu del pueblo):</strong> Valoración de la lengua, la historia y las tradiciones propias como fundamento de la nación.",
-            "<strong>Soberanía Nacional:</strong> Derecho de cada pueblo a constituirse en un Estado libre e independiente.",
-            "<strong>La Primavera de los Pueblos (1848):</strong> Revoluciones simultáneas en París, Viena, Berlín y Milán que derrumbaron el sistema de Metternich."
-        ],
         protagonistas: [
             {
                 nombre: "Johann Gottfried Herder",
@@ -328,13 +307,11 @@ function abrirDetalleTema(claveTema) {
 
     const container = document.getElementById("topicFullContainer");
 
-    // Renderizar bloques de narrativa histórica
     const narrativaHTML = tema.bloquesTexto.map(bloque => `
         <h3>${bloque.subtitulo}</h3>
         ${bloque.parrafos.map(p => `<p>${p}</p>`).join("")}
     `).join("");
 
-    // Renderizar apartado de protagonistas con foto
     const protagonistasHTML = tema.protagonistas ? `
         <section class="figures-section">
             <h3 class="topic-gallery-title">Protagonistas y Actores Clave</h3>
@@ -356,7 +333,6 @@ function abrirDetalleTema(claveTema) {
         </section>
     ` : "";
 
-    // Renderizar galería de escenarios y hechos
     const galeriaHTML = tema.galeria ? `
         <h3 class="topic-gallery-title">Escenarios y Acontecimientos Históricos</h3>
         <p class="topic-gallery-subtitle">Registro visual de los lugares y sucesos mencionados:</p>
@@ -372,41 +348,18 @@ function abrirDetalleTema(claveTema) {
         </div>
     ` : "";
 
-    // Comparador de mapas (exclusivo para Eje 01)
-    let comparadorMapasHTML = "";
-    if (tema.tieneComparadorMapas) {
-        comparadorMapasHTML = `
+    let mapaVienaHTML = "";
+    if (tema.tieneMapaViena) {
+        mapaVienaHTML = `
             <h3 class="topic-gallery-title">¿Cómo quedó Europa tras el Congreso de Viena?</h3>
-            <p class="topic-gallery-subtitle">Desliza la barra hacia la derecha o usa los botones para comparar el mapa de Europa antes y después del Congreso de Viena (1815):</p>
+            <p class="topic-gallery-subtitle">Nuevo mapa político de Europa establecido en 1815 tras la caída de Napoleón:</p>
 
-            <div class="map-slider-section">
-                <div class="map-slider-controls">
-                    <button class="map-step-btn" onclick="ajustarComparadorMapa(100)">1. Europa Napoleónica (Antes)</button>
-                    <div class="map-range-wrapper">
-                        <span>Antes</span>
-                        <input type="range" id="mapRangeInput" min="0" max="100" value="50" oninput="actualizarDeslizadorMapa(this.value)">
-                        <span>Después (1815)</span>
-                    </div>
-                    <button class="map-step-btn active" onclick="ajustarComparadorMapa(0)">2. Europa tras Viena (Después)</button>
+            <div class="map-single-section">
+                <div class="map-full-frame">
+                    <img src="mapa_viena.jpg" alt="Mapa de Europa tras el Congreso de Viena (1815)" onerror="probarExtensiones(this, 'mapa_viena')">
                 </div>
 
-                <div class="map-compare-frame">
-                    <div class="map-layer">
-                        <span class="map-label-tag map-label-right">DESPUÉS • EUROPA TRAS VIENA (1815)</span>
-                        <img src="mapa_viena.jpg" alt="Mapa de Europa tras el Congreso de Viena 1815" onerror="probarExtensiones(this, 'mapa_viena')">
-                    </div>
-
-                    <div class="map-layer map-layer-top" id="mapTopLayer">
-                        <span class="map-label-tag map-label-left">ANTES • EUROPA NAPOLEÓNICA (1812)</span>
-                        <img src="mapa_napoleon.jpg" alt="Mapa de Europa Napoleónica" onerror="probarExtensiones(this, 'mapa_napoleon')">
-                    </div>
-
-                    <div class="map-divider-line" id="mapDividerLine">
-                        <div class="map-divider-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
-                    </div>
-                </div>
-
-                <div class="map-info-caption" id="mapCaptionBox">
+                <div class="map-info-caption">
                     <strong>Reconfiguración territorial tras 1815:</strong> Rusia incorporó gran parte de Polonia y Finlandia (compensando a Suecia con Noruega); Prusia recibió Renania, Westfalia y dos quintas partes de Sajonia; Austria obtuvo Lombardía y el Véneto; y Francia quedó rodeada por el nuevo Reino de los Países Bajos (Bélgica y Holanda) y el ampliado Reino de Cerdeña.
                 </div>
             </div>
@@ -425,55 +378,16 @@ function abrirDetalleTema(claveTema) {
             </div>
         </div>
 
-        <div class="topic-content-grid">
-            <div class="topic-narrative">
-                ${narrativaHTML}
-            </div>
-            <aside class="topic-sidebar-box">
-                <h4><i class="fa-solid fa-bookmark" style="color:#ff1744; margin-right:6px;"></i> Claves del Periodo</h4>
-                <ul class="topic-key-list">
-                    ${tema.datosClave.map(item => `<li>${item}</li>`).join("")}
-                </ul>
-            </aside>
+        <div class="topic-narrative-full">
+            ${narrativaHTML}
         </div>
 
         ${protagonistasHTML}
         ${galeriaHTML}
-        ${comparadorMapasHTML}
+        ${mapaVienaHTML}
     `;
 
     cambiarPagina("detalle-tema");
-}
-
-// Funciones del comparador deslizable de mapas
-function actualizarDeslizadorMapa(valor) {
-    const porcentaje = parseInt(valor, 10);
-    const topLayer = document.getElementById("mapTopLayer");
-    const divider = document.getElementById("mapDividerLine");
-    const caption = document.getElementById("mapCaptionBox");
-
-    if (topLayer && divider) {
-        topLayer.style.clipPath = `inset(0 ${100 - porcentaje}% 0 0)`;
-        divider.style.left = `${porcentaje}%`;
-    }
-
-    if (caption) {
-        if (porcentaje > 65) {
-            caption.innerHTML = "<strong>Antes del Congreso de Viena (Imperio Napoleónico):</strong> Gran parte de Europa estaba bajo el dominio directo de Francia o de Estados aliados como el Gran Ducado de Varsovia, rompiendo las fronteras tradicionales y disolviendo el Sacro Imperio Romano Germánico.";
-        } else if (porcentaje < 35) {
-            caption.innerHTML = "<strong>Después del Congreso de Viena (1815):</strong> Se creó la Confederación Germánica de 39 Estados; Rusia obtuvo Polonia y Finlandia; Prusia y Austria actuaron como dique frente a Francia y Rusia; y se formaron Estados-tapón como el Reino de los Países Bajos y el Reino de Cerdeña.";
-        } else {
-            caption.innerHTML = "<strong>Reconfiguración territorial tras 1815:</strong> Rusia incorporó gran parte de Polonia y Finlandia (compensando a Suecia con Noruega); Prusia recibió Renania, Westfalia y dos quintas partes de Sajonia; Austria obtuvo Lombardía y el Véneto; y Francia quedó rodeada por el Reino de los Países Bajos y el Reino de Cerdeña.";
-        }
-    }
-}
-
-function ajustarComparadorMapa(valor) {
-    const range = document.getElementById("mapRangeInput");
-    if (range) {
-        range.value = valor;
-    }
-    actualizarDeslizadorMapa(valor);
 }
 
 // ==========================================
@@ -661,23 +575,7 @@ function filtrarRed(categoria, boton) {
 }
 
 // ==========================================
-// 3. INTERACTIVIDAD DE CAPÍTULOS DE VIDEO
-// ==========================================
-const capitulosVideo = [
-    "<strong>Evidencia y tesis:</strong> Se analiza cómo el mapa trazado por Metternich y Castlereagh en 1815 subordinó el principio de nacionalidad al equilibrio de poder entre las grandes potencias.",
-    "<strong>Evidencia y tesis:</strong> Se documenta el crecimiento explosivo de ciudades industriales como Manchester, el impacto del vapor y el nacimiento del movimiento obrero frente a la falta de leyes laborales.",
-    "<strong>Evidencia y tesis:</strong> Se explican las experiencias concretas de New Lanark (Robert Owen) y los falansterios (Charles Fourier) como intentos de reorganizar la producción con justicia social.",
-    "<strong>Evidencia y tesis:</strong> Se muestra cómo la pintura (Delacroix), la literatura y la música romántica impulsaron las revoluciones liberales y nacionales de 1830 y 1848."
-];
-
-function mostrarCapitulo(indice, boton) {
-    document.querySelectorAll(".chapter-btn").forEach(b => b.classList.remove("active"));
-    boton.classList.add("active");
-    document.getElementById("chapterSummary").innerHTML = capitulosVideo[indice];
-}
-
-// ==========================================
-// 4. RECURSO INTERACTIVO: LÍNEA DE TIEMPO Y COMPARADOR
+// 3. RECURSO INTERACTIVO: LÍNEA DE TIEMPO Y COMPARADOR
 // ==========================================
 const hitosHistoricos = [
     { anio: "1814–1815", titulo: "Congreso de Viena y Acta Final", eje: "restauracion", texto: "Inaugurado en el Hofburg tras el exilio de Napoleón en Elba; culmina el 9 de junio de 1815, días antes de Waterloo." },
