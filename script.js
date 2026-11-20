@@ -1,6 +1,6 @@
-/* ==================================================
-   0. DETECTOR AUTOMÁTICO DE EXTENSIONES DE IMAGEN
-   ================================================== */
+
+   //DETECTOR AUTOMÁTICO DE EXTENSIONES DE IMAGEN
+
 function probarExtensiones(img, baseName) {
     const extensiones = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'PNG', 'JPEG'];
     let intento = parseInt(img.dataset.intento || '0', 10) + 1;
@@ -16,9 +16,9 @@ function probarExtensiones(img, baseName) {
     }
 }
 
-/* ==================================================
-   1. NAVEGACIÓN ENTRE PÁGINAS (SPA)
-   ================================================== */
+
+   // NAVEGACIÓN ENTRE PÁGINAS 
+
 const ordenPaginas = ['inicio', 'contexto', 'red-historica', 'audiovisual', 'recurso-interactivo', 'conclusiones'];
 
 function cambiarPagina(pageId) {
@@ -46,9 +46,9 @@ function cambiarPagina(pageId) {
     }
 }
 
-/* ==================================================
-   2. CONTENIDO DETALLADO DE LOS 4 TEMAS
-   ================================================== */
+
+   //CONTENIDO DETALLADO DE LOS 4 TEMAS
+
 const temasDetallados = {
     postnapoleonico: {
         kicker: "EJE TEMÁTICO 01 • MUNDO POST-NAPOLEÓNICO (1814 – 1815)",
@@ -455,9 +455,9 @@ function cambiarSlideIndustria(index, btnElement) {
     `;
 }
 
-/* ==================================================
-   3. RED INTERACTIVA DE RELACIONES HISTÓRICAS (4 COLUMNAS: CAUSAS -> ACTORES -> ACONTECIMIENTOS -> CONSECUENCIAS)
-   ================================================== */
+
+   //RED INTERACTIVA DE RELACIONES HISTÓRICAS 
+
 const nodosHistoricos = [
     {
         id: "c1",
@@ -758,9 +758,8 @@ window.addEventListener('resize', () => {
     dibujarLineasCausales();
 });
 
-/* ==================================================
-   4. EXPLORADOR CRONOLÓGICO Y COMPARADOR DE CORRIENTES
-   ================================================== */
+
+   //EXPLORADOR CRONOLÓGICO Y COMPARADOR DE CORRIENTES
 const hitosCronologicos = [
     {
         anio: "1814 – 1815",
@@ -909,9 +908,9 @@ function compararCorriente(key, btn) {
     `;
 }
 
-/* ==================================================
-   5. INICIALIZACIÓN AL CARGAR LA PÁGINA
-   ================================================== */
+
+//INICIALIZACIÓN AL CARGAR LA PÁGINA
+
 document.addEventListener('DOMContentLoaded', () => {
     renderRedHistorica();
     filtrarCronologia('todos');
