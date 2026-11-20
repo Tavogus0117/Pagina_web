@@ -131,17 +131,33 @@
 
         </section>
 
-        <!-- 2. CONTEXTO HISTÓRICO (4 Cuadros con foto que abren vista detallada) -->
+        <!-- 2. CONTEXTO HISTÓRICO (Todo en fondo blanco editorial + 4 Cuadros) -->
         <section id="contexto" class="page-view section-container">
-            <div class="section-header">
+            <div class="section-header context-editorial-intro">
                 <span class="section-kicker">PÁGINA 02 • EL ESCENARIO EUROPEO (1814 – 1848)</span>
-                <h2>Contexto histórico y problema estudiado</h2>
-                <p class="section-desc">Tras la caída de Napoleón y su reclusión en Elba en 1814, Europa vivió el choque entre el intento diplomático por restaurar el equilibrio monárquico y el avance de la industria y las nuevas ideas. <strong>Haz clic en cualquiera de los 4 cuadros para explorar su desarrollo completo.</strong></p>
-            </div>
+                <h2 class="context-main-title">Contexto histórico y problema estudiado</h2>
 
-            <div class="context-highlight">
-                <h3><i class="fa-solid fa-landmark"></i> El Problema Histórico: Un Continente Dividido entre el Pasado y el Futuro</h3>
-                <p>Tras veinticinco años de guerras revolucionarias y expansión napoleónica que habían trastocado las fronteras europeas, las potencias vencedoras (Reino Unido, Austria, Rusia y Prusia) se reunieron en el <strong>Congreso de Viena (1814–1815)</strong> para restablecer el equilibrio de poderes y contener cualquier brote liberal. Sin embargo, este orden conservador chocó frontalmente con la <strong>Revolución Industrial</strong> y el despertar de los pueblos, detonando las ideologías del siglo XIX.</p>
+                <div class="context-white-body">
+                    <h3 class="context-subtitle">El periodo histórico (1814–1848)</h3>
+                    <p>
+                        Entre 1814 y 1848 Europa atravesó una etapa decisiva de transición entre el orden monárquico tradicional y la modernidad política y económica. Tras veinticinco años de guerras revolucionarias y expansión imperial bajo Napoleón Bonaparte, las potencias vencedoras (Reino Unido, Austria, Rusia y Prusia) convocaron el Congreso de Viena (1814–1815) para inaugurar el llamado mundo post-napoleónico. Guiados por principios de legitimidad dinástica y equilibrio de poderes, los diplomáticos rediseñaron las fronteras del continente y conformaron alianzas conservadoras, como la Santa Alianza, con el propósito de impedir la hegemonía de cualquier nación y reprimir las ideas heredadas de la Revolución Francesa.
+                    </p>
+                    <p>
+                        Sin embargo, al mismo tiempo que los gobiernos intentaban estabilizar el mapa político desde arriba, Europa experimentaba una acelerada transformación desde abajo. La expansión de la Revolución Industrial desde Gran Bretaña hacia el continente modificó las formas de producir, aceleró el crecimiento de las ciudades, consolidó el poder económico de la burguesía y dio origen a una numerosa clase obrera urbana que vivía en condiciones de extrema precariedad.
+                    </p>
+
+                    <h3 class="context-subtitle">El problema estudiado</h3>
+                    <p>
+                        El problema central de este periodo radica en la profunda contradicción entre el orden diplomático impuesto en Viena y las nuevas fuerzas sociales, económicas y culturales del siglo XIX. Por un lado, las fronteras trazadas por las monarquías ignoraron la identidad lingüística, histórica y cultural de millones de habitantes, dejando divididos a pueblos como el alemán y el italiano, o sometidos bajo imperios multinacionales como el austriaco, el ruso y el otomano. Por otro lado, el avance desregulado de la industrialización generó una aguda cuestión social marcada por jornadas laborales extenuantes, bajos salarios y ausencia de derechos para los trabajadores.
+                    </p>
+                    <p>
+                        Frente a esta doble crisis surgieron tres grandes respuestas que definieron la época: las utopías sociales, impulsadas por pensadores como Saint-Simon, Charles Fourier y Robert Owen, quienes propusieron comunidades cooperativas y una organización más justa del trabajo; el Romanticismo, que reaccionó contra el racionalismo frío y la mecanización exaltando la libertad creadora, las emociones y el valor de las tradiciones populares; y el Nacionalismo, que convirtió la identidad cultural de cada pueblo en una exigencia política de soberanía y autodeterminación. La convergencia de estas corrientes alimentó las oleadas revolucionarias de 1820, 1830 y 1848, poniendo en jaque definitivo el sistema de la Restauración.
+                    </p>
+
+                    <p class="context-cta-line">
+                        Haz clic en cualquiera de los 4 cuadros para explorar el desarrollo completo de cada eje:
+                    </p>
+                </div>
             </div>
 
             <!-- 4 CUADROS INTERACTIVOS CON IMAGEN Y RESUMEN BREVE -->
@@ -207,39 +223,39 @@
             <article class="topic-full-article" id="topicFullContainer"></article>
         </section>
 
-        <!-- 3. RED INTERACTIVA DE RELACIONES HISTÓRICAS -->
-        <section id="red-historica" class="page-view section-container bg-light">
+        <!-- 3. RED INTERACTIVA DE RELACIONES HISTÓRICAS (DISEÑO EDITORIAL DE 4 COLUMNAS CAUSALES) -->
+        <section id="red-historica" class="page-view section-container wide-page">
             <div class="section-header">
-                <span class="section-kicker">PÁGINA 03 • ANÁLISIS DE CAUSALIDAD</span>
+                <span class="section-kicker">PÁGINA 03 • ANÁLISIS DE CAUSALIDAD HISTÓRICA</span>
                 <h2>Red interactiva de relaciones históricas</h2>
-                <p class="section-desc">Explora cómo los procesos políticos y económicos del siglo XIX conectan causas, actores históricos, acontecimientos y consecuencias ideológicas. Haz clic en cada nodo para ver su análisis.</p>
+                <p class="section-desc">
+                    Selecciona cualquier nodo del mapa para visualizar cómo se articulan las causas estructurales, los actores históricos, los acontecimientos clave y las consecuencias ideológicas y políticas entre 1814 y 1848.
+                </p>
             </div>
 
-            <div class="network-filters">
-                <button class="filter-btn active" onclick="filtrarRed('todos', this)">Todos los Nodos (8)</button>
-                <button class="filter-btn" onclick="filtrarRed('causa', this)">Causas Estructurales</button>
-                <button class="filter-btn" onclick="filtrarRed('actor', this)">Actores y Pensadores</button>
-                <button class="filter-btn" onclick="filtrarRed('acontecimiento', this)">Acontecimientos</button>
-                <button class="filter-btn" onclick="filtrarRed('consecuencia', this)">Consecuencias e Ideologías</button>
+            <!-- TABLERO RELACIONAL EN 4 COLUMNAS -->
+            <div class="causal-board" id="networkCanvas">
+                <svg class="causal-svg" id="networkLines"></svg>
+
+                <div class="causal-columns" id="nodesContainer"></div>
             </div>
 
-            <div class="network-layout">
-                <div class="network-canvas" id="networkCanvas">
-                    <svg class="network-lines" id="networkLines"></svg>
-                    <div class="nodes-grid" id="nodesContainer"></div>
+            <!-- PANEL DE ANÁLISIS DETALLADO DEBAJO DEL MAPA -->
+            <div class="causal-detail-panel" id="networkDetail">
+                <div class="causal-detail-header">
+                    <div>
+                        <span class="detail-badge" id="detailType">CAUSA ESTRUCTURAL</span>
+                        <h3 id="detailTitle">Caída de Napoleón y Restauración</h3>
+                        <span class="detail-period" id="detailPeriod">1814 – 1815 • Europa Post-Napoleónica</span>
+                    </div>
+                    <div class="detail-source-tag" id="detailSource">
+                        Fuente: Hobsbawm (2009) / Acta Final de Viena (1815)
+                    </div>
                 </div>
 
-                <aside class="network-detail" id="networkDetail">
-                    <span class="detail-badge" id="detailType">SELECCIONA UN NODO</span>
-                    <h3 id="detailTitle">Explora las conexiones históricas</h3>
-                    <p id="detailDesc">Haz clic en cualquier nodo del tablero oscuro para desplegar su explicación histórica, sus protagonistas y la justificación de sus vínculos con otros procesos.</p>
-                    <div class="connections-box">
-                        <h4>Relaciones históricas justificadas:</h4>
-                        <ul id="detailConnections">
-                            <li>Selecciona un nodo para visualizar sus conexiones directas.</li>
-                        </ul>
-                    </div>
-                </aside>
+                <p class="causal-detail-desc" id="detailDesc"></p>
+
+                <div class="causal-links-grid" id="detailConnections"></div>
             </div>
         </section>
 
@@ -303,26 +319,20 @@
                     </div>
                     <div class="yt-videos-grid">
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • REVOLUCIÓN INDUSTRIAL</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/XerUPdM-fRo" title="Video 1 Revolución Industrial" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • REVOLUCIÓN INDUSTRIAL</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/KdknJfxL8kU" title="Video 2 Revolución Industrial" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • REVOLUCIÓN INDUSTRIAL</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/3LQAnFEADl4?start=1" title="Video 3 Revolución Industrial" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -336,26 +346,20 @@
                     </div>
                     <div class="yt-videos-grid">
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • UTOPÍAS SOCIALES</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/8f0CWniL_zQ" title="Video 1 Utopías Sociales" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • UTOPÍAS SOCIALES</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/XCE_UxIU9FQ" title="Video 2 Utopías Sociales" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • UTOPÍAS SOCIALES</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/hgHJWEbkjDo" title="Video 3 Utopías Sociales" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -369,26 +373,20 @@
                     </div>
                     <div class="yt-videos-grid">
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • ROMANTICISMO Y NACIONALISMO</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/gDl5Pz48Tdc" title="Video 1 Romanticismo y Nacionalismo" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • ROMANTICISMO Y NACIONALISMO</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/AGLu3hEExMw" title="Video 2 Romanticismo y Nacionalismo" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="yt-card">
-                            <div class="yt-embed-box yt-placeholder">
-                                <i class="fa-brands fa-youtube"></i>
-                                <span>VIDEO YOUTUBE • ROMANTICISMO Y NACIONALISMO</span>
-                                <small>Pega aquí el enlace embed de YouTube</small>
+                            <div class="yt-embed-box">
+                                <iframe src="https://www.youtube.com/embed/DQ3cj6U_t3I" title="Video 3 Romanticismo y Nacionalismo" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -396,34 +394,45 @@
             </div>
         </section>
 
-        <!-- 5. RECURSO INTERACTIVO ADICIONAL -->
-        <section id="recurso-interactivo" class="page-view section-container bg-light">
+        <!-- 5. RECURSO INTERACTIVO ADICIONAL (LÍNEA DE TIEMPO CLARA Y COMPARADOR DE CORRIENTES) -->
+        <section id="recurso-interactivo" class="page-view section-container">
             <div class="section-header">
                 <span class="section-kicker">PÁGINA 05 • HERRAMIENTA DE CONSULTA Y COMPARACIÓN</span>
                 <h2>Explorador cronológico y comparador de corrientes</h2>
-                <p class="section-desc">Filtra los acontecimientos clave entre 1814 y 1848 según su dimensión histórica o compara los postulados del Romanticismo, Nacionalismo y Utopías Sociales.</p>
+                <p class="section-desc">
+                    Recorre paso a paso los acontecimientos clave entre 1814 y 1848 o selecciona una corriente del siglo XIX para comparar sus ideas principales, protagonistas y legado histórico.
+                </p>
             </div>
 
-            <div class="timeline-controls">
-                <label for="ejeSelect"><strong>Filtrar cronología por proceso:</strong></label>
-                <select id="ejeSelect" onchange="renderTimeline()">
-                    <option value="todos">Todos los hitos históricos (1814 – 1848)</option>
-                    <option value="restauracion">Mundo Post-Napoleónico y Restauración</option>
-                    <option value="industria">Revolución Industrial y Utopías Sociales</option>
-                    <option value="nacionalismo">Romanticismo y Oleadas Nacionalistas</option>
-                </select>
-            </div>
-
-            <div class="timeline-grid" id="timelineContainer"></div>
-
-            <div class="comparator-box">
-                <h3>Comparador Analítico de Corrientes del Siglo XIX</h3>
-                <p class="comp-subtitle">Selecciona una corriente para comparar qué criticaba, quiénes la impulsaron y cuál fue su legado histórico:</p>
-                <div class="comparator-buttons">
-                    <button class="comp-btn active" onclick="compararCorriente('romanticismo', this)">Romanticismo</button>
-                    <button class="comp-btn" onclick="compararCorriente('nacionalismo', this)">Nacionalismo</button>
-                    <button class="comp-btn" onclick="compararCorriente('utopias', this)">Utopías Sociales</button>
+            <!-- BLOQUE 1: LÍNEA DE TIEMPO INTERACTIVA -->
+            <div class="explorer-section-block">
+                <div class="explorer-block-header">
+                    <h3>1. Línea de tiempo del periodo (1814 – 1848)</h3>
+                    <div class="timeline-pills">
+                        <button class="tl-pill-btn active" onclick="filtrarCronologia('todos', this)">Todos (9)</button>
+                        <button class="tl-pill-btn" onclick="filtrarCronologia('restauracion', this)">Mundo Post-Napoleónico</button>
+                        <button class="tl-pill-btn" onclick="filtrarCronologia('industria', this)">Revolución Industrial y Utopías</button>
+                        <button class="tl-pill-btn" onclick="filtrarCronologia('nacionalismo', this)">Romanticismo y Nacionalismo</button>
+                    </div>
                 </div>
+
+                <div class="timeline-list" id="timelineContainer"></div>
+            </div>
+
+            <!-- BLOQUE 2: COMPARADOR DE CORRIENTES -->
+            <div class="comparator-box">
+                <div class="comparator-top">
+                    <div>
+                        <h3>2. Comparador de corrientes ideológicas y culturales</h3>
+                        <p class="comp-subtitle">Selecciona una corriente para ver a qué problema respondía, quiénes la impulsaron y cuál fue su aporte:</p>
+                    </div>
+                    <div class="comparator-buttons">
+                        <button class="comp-btn active" onclick="compararCorriente('romanticismo', this)">Romanticismo</button>
+                        <button class="comp-btn" onclick="compararCorriente('nacionalismo', this)">Nacionalismo</button>
+                        <button class="comp-btn" onclick="compararCorriente('utopias', this)">Utopías Sociales</button>
+                    </div>
+                </div>
+
                 <div class="comparator-result" id="comparatorResult"></div>
             </div>
         </section>
@@ -447,17 +456,31 @@
     <!-- 7. FUENTES BIBLIOGRÁFICAS (Siempre en la parte inferior) -->
     <footer class="sources-footer">
         <div class="footer-inner">
-            <span class="section-kicker" style="color: #93c5fd;">SUSTENTO ACADÉMICO Y DOCUMENTAL</span>
+            <span class="section-kicker" style="color:#93c5fd;">SUSTENTO ACADÉMICO Y DOCUMENTAL</span>
             <h3>Fuentes utilizadas</h3>
             <ul class="sources-list">
-                <li><strong>Hobsbawm, E. (2009).</strong> <em>La era de la revolución, 1789-1848</em>. Barcelona: Crítica. (Capítulos 3, 6 y 7: Congreso de Viena, Revolución Industrial e Ideologías).</li>
+                <li><strong>Hobsbawm, E. (2009).</strong> <em>La era de la revolución, 1789–1848</em>. Barcelona: Crítica. (Capítulos 3, 6 y 7: Congreso de Viena, Revolución Industrial e Ideologías).</li>
                 <li><strong>Osterhammel, J. (2015).</strong> <em>La transformación del mundo: Una historia global del siglo XIX</em>. Barcelona: Crítica.</li>
                 <li><strong>Berlin, I. (2000).</strong> <em>Las raíces del romanticismo</em>. Madrid: Taurus. (Análisis del movimiento romántico y su vínculo con el nacionalismo alemán y europeo).</li>
                 <li><strong>Engels, F. (1880).</strong> <em>Del socialismo utópico al socialismo científico</em>. (Análisis histórico sobre Saint-Simon, Charles Fourier y Robert Owen).</li>
                 <li><strong>Documentos históricos primarios:</strong> <em>Acta Final del Congreso de Viena</em> (9 de junio de 1815) y <em>Manifiesto de la Joven Italia</em> de Giuseppe Mazzini (1831).</li>
+                <li><strong>Historia National Geographic:</strong> <em>El Congreso de Viena, la reorganización de Europa tras Napoleón</em>. Disponible en: <a href="https://historia.nationalgeographic.com.es/a/congreso-viena-europa-tras-napoleon_18665" target="_blank" rel="noopener noreferrer">https://historia.nationalgeographic.com.es/a/congreso-viena-europa-tras-napoleon_18665</a></li>
+                <li><strong>El Orden Mundial (EOM):</strong> <em>El mapa de Europa tras las guerras napoleónicas</em>. Disponible en: <a href="https://elordenmundial.com/mapas-y-graficos/mapa-europa-napoleon/" target="_blank" rel="noopener noreferrer">https://elordenmundial.com/mapas-y-graficos/mapa-europa-napoleon/</a></li>
+                <li><strong>Dialnet (Universidad de La Rioja):</strong> <em>Artículo académico de investigación histórica (Código 5885508)</em>. Disponible en: <a href="https://dialnet.unirioja.es/servlet/articulo?codigo=5885508" target="_blank" rel="noopener noreferrer">https://dialnet.unirioja.es/servlet/articulo?codigo=5885508</a></li>
+                <li><strong>Concepto.de:</strong> <em>Revolución Industrial: etapas, causas y consecuencias</em>. Disponible en: <a href="https://concepto.de/revolucion-industrial/" target="_blank" rel="noopener noreferrer">https://concepto.de/revolucion-industrial/</a></li>
+                <li><strong>National Geographic Latinoamérica (2024):</strong> <em>Qué fue y cuándo comenzó la Revolución Industrial</em>. Disponible en: <a href="https://www.nationalgeographicla.com/historia/2024/12/que-fue-y-cuando-comenzo-la-revolucion-industrial" target="_blank" rel="noopener noreferrer">https://www.nationalgeographicla.com/historia/2024/12/que-fue-y-cuando-comenzo-la-revolucion-industrial</a></li>
+                <li><strong>Encyclopædia Britannica:</strong> <em>Industrial Revolution: The first Industrial Revolution</em>. Disponible en: <a href="https://www.britannica.com/event/Industrial-Revolution/The-first-Industrial-Revolution" target="_blank" rel="noopener noreferrer">https://www.britannica.com/event/Industrial-Revolution/The-first-Industrial-Revolution</a></li>
+                <li><strong>Filosofía.net (Materiales de Historia de la Filosofía):</strong> <em>El Socialismo utópico (Henri de Saint-Simon, Charles Fourier y Robert Owen)</em>. Disponible en: <a href="https://www.filosofia.net/materiales/sofiafilia/hf/soff_u12_1.html" target="_blank" rel="noopener noreferrer">https://www.filosofia.net/materiales/sofiafilia/hf/soff_u12_1.html</a></li>
+                <li><strong>History Crunch (2026):</strong> Millar, B., <em>Utopian Socialism: A Detailed Summary</em>. Disponible en: <a href="https://historycrunch.com/utopian-socialism/" target="_blank" rel="noopener noreferrer">https://historycrunch.com/utopian-socialism/</a></li>
+                <li><strong>Repositorio Institucional UNAM (Dirección General de Bibliotecas):</strong> Juárez Vargas, J. M., <em>El socialismo utópico: desde la exposición de Friedrich Engels en Del socialismo utópico al socialismo científico</em>. Disponible en: <a href="https://ru.dgb.unam.mx/server/api/core/bitstreams/aa020f5c-3c3b-40d7-bad0-d33a390d3c03/content" target="_blank" rel="noopener noreferrer">https://ru.dgb.unam.mx/server/api/core/bitstreams/aa020f5c-3c3b-40d7-bad0-d33a390d3c03/content</a></li>
+                <li><strong>Scribd (Material Académico de Historia Contemporánea):</strong> <em>Tema 3: El siglo XIX. Liberalismo, Nacionalismo y Romanticismo</em>. Disponible en: <a href="https://es.scribd.com/document/828664805/TEMA-3-HISTORIA" target="_blank" rel="noopener noreferrer">https://es.scribd.com/document/828664805/TEMA-3-HISTORIA</a></li>
+                <li><strong>Nueva Escuela Mexicana (Secretaría de Educación Pública - SEP):</strong> <em>Nacionalismo y Romanticismo en el siglo XIX</em>. Disponible en: <a href="https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/nacionalismo-y-romanticismo-2/" target="_blank" rel="noopener noreferrer">https://nuevaescuelamexicana.sep.gob.mx/contenido/coleccion/nacionalismo-y-romanticismo-2/</a></li>
+                <li><strong>Fundación Juan March (Música de Raíz Popular):</strong> <em>El Romanticismo y el rescate de la música y cultura popular</em>. Disponible en: <a href="https://www2.march.es/musica/jovenes/raiz-popular-html/romanticismo.html" target="_blank" rel="noopener noreferrer">https://www2.march.es/musica/jovenes/raiz-popular-html/romanticismo.html</a></li>
+                <li><strong>Historia y Biografías:</strong> <em>Concepto de Nación y el surgimiento del Nacionalismo en Europa</em>. Disponible en: <a href="https://historiaybiografias.com/nacion/" target="_blank" rel="noopener noreferrer">https://historiaybiografias.com/nacion/</a></li>
             </ul>
+
             <div class="ai-disclosure">
-                <strong>Declaración de transparencia y autoría (CCOMP):</strong> Estructura base en HTML5, CSS3 y JavaScript desarrollada con apoyo de IA generativa y adaptada, depurada y sustentada históricamente por los integrantes del equipo.
+                Proyecto académico de Historia Contemporánea • Europa en Transformación (1815–1848).
             </div>
         </div>
     </footer>
