@@ -1248,11 +1248,9 @@ body {
 .video-placeholder video,
 .video-placeholder iframe {
     width: 100%;
-    height: auto;
-    max-height: 315px;
+    height: 315px;
     display: block;
     background: #000000;
-    object-fit: contain;
     border: none;
 }
 
