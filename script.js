@@ -47,24 +47,16 @@ function cambiarPagina(pageId) {
 }
 
 /* ==================================================
-   2. SELECCIÓN DE INTEGRANTES EN INICIO
-   ================================================== */
-function seleccionarIntegrante(card) {
-    document.querySelectorAll('.member-card').forEach(c => c.classList.remove('selected-member'));
-    card.classList.add('selected-member');
-}
-
-/* ==================================================
-   3. CONTENIDO DETALLADO DE LOS 4 TEMAS
+   2. CONTENIDO DETALLADO DE LOS 4 TEMAS
    ================================================== */
 const temasDetallados = {
     postnapoleonico: {
         kicker: "EJE TEMÁTICO 01 • MUNDO POST-NAPOLEÓNICO (1814 – 1815)",
         titulo: "El Congreso de Viena y el Nuevo Equilibrio Europeo",
-        resumen: "Tras veinticinco años de guerras revolucionarias y la derrota definitiva de Napoleón Bonaparte, las potencias europeas se reunieron en Viena entre septiembre de 1814 y junio de 1815 para rediseñar el mapa continental y asegurar una paz estable.",
+        resumen: "Tras veinticinco años de guerras revolucionarias y la derrota definitiva de Napoleón Bonaparte en Waterloo, las potencias europeas se reunieron en Viena entre septiembre de 1814 y junio de 1815 para rediseñar el mapa continental y asegurar una paz estable.",
         heroImg: "tema_napoleon.jpg",
         heroBase: "tema_napoleon",
-        tieneVisorInteractivo: true,
+        tieneVisorInteractivo: false,
         tieneComparativaEtapas: false,
         bloquesConImagen: [
             {
@@ -73,40 +65,30 @@ const temasDetallados = {
                     "Convocado tras la primera abdicación de Napoleón en 1814 y concluido pocos días antes de la batalla de Waterloo en junio de 1815, el Congreso de Viena reunió en el Palacio Imperial del Hofburg a los principales diplomáticos de Europa. Su propósito era restaurar las monarquías legítimas depuestas por la Revolución Francesa y establecer un sistema de equilibrio de poderes que impidiera que una sola nación volviera a dominar el continente.",
                     "A diferencia de tratados punitivos anteriores, los vencedores (Reino Unido, Austria, Rusia y Prusia) integraron a la Francia monárquica de Luis XVIII en las negociaciones para garantizar un consenso duradero entre las grandes potencias."
                 ],
-                img: "viena_hofburg.jpg",
-                baseName: "viena_hofburg",
+                img: "hofburg_viena.jpg",
+                baseName: "hofburg_viena",
                 caption: "El Palacio Imperial del Hofburg en Viena, sede oficial de las sesiones diplomáticas entre 1814 y 1815."
             },
             {
-                titulo: "2. Los tres principios rectores y los Estados tapón",
+                titulo: "2. La derrota de Napoleón y los principios de la Restauración",
                 parrafos: [
                     "La arquitectura diplomática de Viena se sustentó en tres pilares: la legitimidad dinástica (devolver los tronos a sus antiguas casas reales), la compensación territorial entre los vencedores y la creación de Estados tapón alrededor de Francia para contener cualquier futura expansión.",
                     "Así surgieron el Reino Unido de los Países Bajos (uniendo Bélgica y Holanda), el fortalecimiento del Reino de Piamonte-Cerdeña en el norte de Italia y la creación de la Confederación Germánica bajo presidencia austriaca."
                 ],
-                img: "viena_estados_tapon.jpg",
-                baseName: "viena_estados_tapon",
-                caption: "Rediseño fronterizo y Estados tapón creados alrededor de Francia para garantizar el equilibrio continental."
-            },
-            {
-                titulo: "3. La Santa Alianza y los límites de la Restauración",
-                parrafos: [
-                    "Para vigilar el cumplimiento de los acuerdos, el zar Alejandro I promovió la Santa Alianza junto con Austria y Prusia, un pacto de intervención militar frente a cualquier brote liberal o nacionalista.",
-                    "Aunque el sistema de congresos evitó grandes guerras entre potencias durante décadas, su negativa a reconocer la soberanía popular y las aspiraciones nacionales provocó las oleadas revolucionarias de 1820, 1830 y 1848."
-                ],
-                img: "viena_santa_alianza.jpg",
-                baseName: "viena_santa_alianza",
-                caption: "Los monarcas de Rusia, Austria y Prusia sellando la Santa Alianza para defender el orden conservador."
+                img: "napoleon_waterloo.jpg",
+                baseName: "napoleon_waterloo",
+                caption: "La derrota definitiva de Napoleón Bonaparte en Waterloo (junio de 1815) selló el orden acordado en Viena."
             }
         ],
         personajes: [
-            { nombre: "Klemens von Metternich", cargo: "Canciller del Imperio Austriaco", desc: "Anfitrión y principal arquitecto del sistema conservador europeo; defendió el equilibrio de poderes y la contención del liberalismo.", img: "personaje_metternich.jpg", baseName: "personaje_metternich" },
-            { nombre: "Vizconde Castlereagh", cargo: "Ministro de Exteriores Británico", desc: "Buscó evitar el predominio de Rusia o Francia en el continente y asegurar la supremacía naval y comercial de Gran Bretaña.", img: "personaje_castlereagh.jpg", baseName: "personaje_castlereagh" },
-            { nombre: "Zar Alejandro I", cargo: "Emperador de Rusia", desc: "Lideró la coalición que derrotó a Napoleón, obtuvo gran parte de Polonia e impulsó la creación de la Santa Alianza.", img: "personaje_alejandro.jpg", baseName: "personaje_alejandro" },
-            { nombre: "Charles-Maurice de Talleyrand", cargo: "Ministro de Exteriores de Francia", desc: "Logró que la Francia derrotada fuera admitida como quinta gran potencia en Viena, evitando desmembramientos territoriales.", img: "personaje_talleyrand.jpg", baseName: "personaje_talleyrand" }
+            { nombre: "Klemens von Metternich", cargo: "Canciller del Imperio Austriaco", desc: "Anfitrión y principal arquitecto del sistema conservador europeo; defendió el equilibrio de poderes y la contención del liberalismo.", img: "metternich.jpg", baseName: "metternich" },
+            { nombre: "Vizconde Castlereagh", cargo: "Ministro de Exteriores Británico", desc: "Buscó evitar el predominio de Rusia o Francia en el continente y asegurar la supremacía naval y comercial de Gran Bretaña.", img: "castlereagh.jpg", baseName: "castlereagh" },
+            { nombre: "Zar Alejandro I", cargo: "Emperador de Rusia", desc: "Lideró la coalición que derrotó a Napoleón, obtuvo gran parte de Polonia e impulsó la creación de la Santa Alianza.", img: "alejandro1.jpg", baseName: "alejandro1" },
+            { nombre: "Charles-Maurice de Talleyrand", cargo: "Ministro de Exteriores de Francia", desc: "Logró que la Francia derrotada fuera admitida como quinta gran potencia en Viena, evitando desmembramientos territoriales.", img: "talleyrand.jpg", baseName: "talleyrand" }
         ],
         mapa: {
-            img: "mapa_viena_1815.jpg",
-            baseName: "mapa_viena_1815",
+            img: "mapa_viena.jpeg",
+            baseName: "mapa_viena",
             titulo: "Mapa de Europa tras el Congreso de Viena (1815)",
             descripcion: "Distribución territorial acordada en el Acta Final de Viena: Confederación Germánica, Reino de los Países Bajos, Imperio Austriaco, Reino de Polonia vinculado a Rusia y fragmentación de la península itálica."
         }
@@ -118,52 +100,47 @@ const temasDetallados = {
         resumen: "Iniciada en Gran Bretaña en la segunda mitad del siglo XVIII y expandida por Europa en el siglo XIX, la Revolución Industrial transformó una economía agraria y artesanal en una sociedad urbana, mecanizada y capitalista.",
         heroImg: "tema_industria.jpg",
         heroBase: "tema_industria",
-        tieneVisorInteractivo: false,
+        tieneVisorInteractivo: true,
         tieneComparativaEtapas: true,
         bloquesConImagen: [
             {
                 titulo: "1. ¿Qué fue y por qué comenzó en Gran Bretaña?",
                 parrafos: [
-                    "La Revolución Industrial fue el proceso de transformación económica, tecnológica y social más profundo desde el Neolítico. Comenzó en Gran Bretaña hacia 1760 gracias a una combinación única de factores: abundantes yacimientos de carbón y hierro, estabilidad institucional tras la Revolución Gloriosa, acumulación de capital procedente del comercio marítimo, una revolución agrícola previa y una red de canales y puertos.",
-                    "El perfeccionamiento de la máquina de vapor por James Watt en 1769 permitió independizar las fábricas de los cursos de agua y multiplicar la capacidad productiva textil y siderúrgica."
+                    "La Revolución Industrial fue el proceso de transformación económica, tecnológica y social más profundo desde el Neolítico. Comenzó en Gran Bretaña hacia 1760 gracias a una combinación única de factores: abundantes yacimientos de carbón y hierro, estabilidad institucional, acumulación de capital procedente del comercio marítimo, una revolución agrícola previa y una red de canales y puertos.",
+                    "El perfeccionamiento de la máquina de vapor por James Watt en 1769 y las primeras máquinas textiles permitieron multiplicar la capacidad productiva."
                 ],
-                img: "ind_watt_vapor.jpg",
-                baseName: "ind_watt_vapor",
-                caption: "La máquina de vapor perfeccionada por James Watt, motor energético de la Primera Revolución Industrial."
+                img: "ind_origen.jpg",
+                baseName: "ind_origen",
+                caption: "Orígenes de la industrialización en Gran Bretaña: carbón, hierro y mecanización de la producción."
             },
             {
-                titulo: "2. El sistema fabril y la revolución de los transportes",
+                titulo: "2. Nuevos inventos, fábricas y revolución de los transportes",
                 parrafos: [
                     "El taller artesanal fue desplazado por la fábrica, donde grandes máquinas concentraban a cientos de obreros bajo estricta disciplina horaria. Paralelamente, la aplicación del vapor al transporte dio origen al barco de vapor y a la locomotora ferroviaria de George Stephenson (línea Liverpool-Manchester en 1830).",
                     "El ferrocarril integró mercados nacionales, abarató el traslado de materias primas y consolidó la expansión industrial hacia Bélgica, Francia, Alemania y Estados Unidos."
                 ],
-                img: "ind_ferrocarril.jpg",
-                baseName: "ind_ferrocarril",
-                caption: "Expansión del ferrocarril a vapor, símbolo de velocidad, integración comercial y progreso técnico."
+                img: "ind_transporte.jpg",
+                baseName: "ind_transporte",
+                caption: "Expansión del ferrocarril y los transportes a vapor, símbolo de integración comercial y progreso técnico."
             },
             {
                 titulo: "3. Urbanización acelerada y la Cuestión Social",
                 parrafos: [
-                    "Millones de campesinos emigraron hacia centros industriales como Manchester, Birmingham o Liverpool. Este crecimiento desordenado generó barrios obreros hacinados, sin alcantarillado ni agua potable, donde proliferaron enfermedades como el cólera y la tuberculosis.",
-                    "En las fábricas, hombres, mujeres y niños trabajaban entre 14 y 16 horas diarias por salarios de subsistencia, sin descanso dominical ni cobertura por accidentes. Esta realidad dio origen al movimiento ludita, los primeros sindicatos (Trade Unions) y el cartismo."
+                    "Millones de campesinos emigraron hacia centros industriales como Manchester, Birmingham o Liverpool. Este crecimiento desordenado generó barrios obreros hacinados, sin alcantarillado ni agua potable, donde proliferaron enfermedades.",
+                    "En las fábricas, hombres, mujeres y niños trabajaban entre 14 y 16 horas diarias por salarios de subsistencia, sin descanso dominical ni cobertura por accidentes. Esta realidad dio origen al movimiento ludita y a los primeros sindicatos."
                 ],
-                img: "ind_cuestion_social.jpg",
-                baseName: "ind_cuestion_social",
-                caption: "Condiciones de vida en los barrios obreros industriales y protestas sociales frente a la mecanización."
+                img: "ind_sociedad.jpg",
+                baseName: "ind_sociedad",
+                caption: "Transformación social, crecimiento urbano acelerado y condiciones laborales del proletariado industrial."
             }
         ],
         personajes: [
-            { nombre: "James Watt", cargo: "Ingeniero e Inventor Escocés", desc: "Perfeccionó la máquina de vapor con condensador separado (1769), convirtiéndola en el motor de la industria moderna.", img: "personaje_watt.jpg", baseName: "personaje_watt" },
-            { nombre: "George Stephenson", cargo: "Ingeniero Ferroviario", desc: "Construyó la locomotora 'The Rocket' e inauguró en 1830 el primer ferrocarril público de pasajeros entre Liverpool y Manchester.", img: "personaje_stephenson.jpg", baseName: "personaje_stephenson" },
-            { nombre: "Richard Arkwright", cargo: "Pionero del Sistema Fabril", desc: "Patentó el bastidor hidráulico de hilado y organizó las primeras fábricas textiles mecanizadas en Inglaterra.", img: "personaje_arkwright.jpg", baseName: "personaje_arkwright" },
-            { nombre: "Ned Ludd / Movimiento Obrero", cargo: "Resistencia Obrera Temprana", desc: "Simbolizó la protesta de los artesanos frente al desempleo y las duras condiciones impuestas por las máquinas.", img: "personaje_ludismo.jpg", baseName: "personaje_ludismo" }
+            { nombre: "James Watt", cargo: "Ingeniero e Inventor Escocés", desc: "Perfeccionó la máquina de vapor con condensador separado (1769), convirtiéndola en el motor de la industria moderna.", img: "watt.jpg", baseName: "watt" },
+            { nombre: "George Stephenson", cargo: "Ingeniero Ferroviario", desc: "Construyó la locomotora 'The Rocket' e inauguró en 1830 el primer ferrocarril público de pasajeros entre Liverpool y Manchester.", img: "stephenson.jpg", baseName: "stephenson" },
+            { nombre: "James Hargreaves", cargo: "Inventor Textil", desc: "Creó la hiladora 'Spinning Jenny' (1764), multiplicando la producción de hilo y revolucionando la industria textil británica.", img: "hargreaves.jpg", baseName: "hargreaves" },
+            { nombre: "Edmund Cartwright", cargo: "Inventor del Telar Mecánico", desc: "Patentó el telar mecánico accionado por vapor (1785), completando la mecanización de la industria algodonera.", img: "cartwright.jpg", baseName: "cartwright" }
         ],
-        mapa: {
-            img: "mapa_industrializacion.jpg",
-            baseName: "mapa_industrializacion",
-            titulo: "Difusión de la Revolución Industrial en Europa (siglo XIX)",
-            descripcion: "Expansión desde los focos británicos (Lancashire, Midlands, Gales) hacia Bélgica, el norte de Francia, la cuenca del Ruhr en Alemania y el norte de Italia."
-        }
+        mapa: null
     },
 
     utopias: {
@@ -179,11 +156,11 @@ const temasDetallados = {
                 titulo: "1. ¿Por qué surgieron las utopías sociales?",
                 parrafos: [
                     "Durante las primeras décadas del siglo XIX se hizo evidente que las libertades jurídicas proclamadas por las revoluciones liberales no garantizaban el bienestar material de los trabajadores. La concentración de riqueza en manos de los propietarios industriales contrastaba con la pobreza extrema del proletariado.",
-                    "Pensadores reformistas en Francia y Gran Bretaña plantearon que la sociedad debía reorganizarse racionalmente para sustituir la competencia egoísta por la cooperación solidaria. Más tarde, Karl Marx y Friedrich Engels los denominaron 'socialistas utópicos' porque confiaban en persuadir pacíficamente a todas las clases sociales mediante el ejemplo."
+                    "Pensadores reformistas en Francia y Gran Bretaña plantearon que la sociedad debía reorganizarse racionalmente para sustituir la competencia egoísta por la cooperación solidaria. Más tarde, Karl Marx y Friedrich Engels los denominaron 'socialistas utópicos' porque confiaban en persuadir pacíficamente a todas las clases sociales."
                 ],
-                img: "utopia_new_lanark.jpg",
-                baseName: "utopia_new_lanark",
-                caption: "Vista histórica de New Lanark (Escocia), la fábrica modelo donde Robert Owen aplicó reformas laborales y educativas."
+                img: "utopias_debate.jpg",
+                baseName: "utopias_debate",
+                caption: "Debate social y filosófico frente a las desigualdades provocadas por el capitalismo industrial."
             },
             {
                 titulo: "2. Los Falansterios de Fourier y la Sociedad Productiva de Saint-Simon",
@@ -191,8 +168,8 @@ const temasDetallados = {
                     "Henri de Saint-Simon propuso una sociedad dirigida por los 'productores' (científicos, ingenieros, industriales y obreros) frente a los sectores ociosos del Antiguo Régimen, defendiendo la planificación económica al servicio del progreso social.",
                     "Por su parte, Charles Fourier criticó la monotonía alienante del trabajo fabril y diseñó los falansterios: comunidades autosuficientes de unas 1.600 personas donde cada individuo elegía sus tareas según sus pasiones y vocación, garantizando la igualdad entre hombres y mujeres."
                 ],
-                img: "utopia_falansterio.jpg",
-                baseName: "utopia_falansterio",
+                img: "utopias_falansterio.jpg",
+                baseName: "utopias_falansterio",
                 caption: "Diseño arquitectónico de un Falansterio idealizado por Charles Fourier para la vida comunitaria y cooperativa."
             },
             {
@@ -201,23 +178,18 @@ const temasDetallados = {
                     "A diferencia de otros teóricos, el empresario galés Robert Owen llevó sus ideas a la práctica en su hilandería de New Lanark (Escocia): redujo la jornada laboral, prohibió el trabajo infantil, mejoró los salarios y creó escuelas gratuitas y viviendas dignas, demostrando que el bienestar obrero aumentaba la productividad.",
                     "Posteriormente fundó la comunidad cooperativa de New Harmony en Estados Unidos (1825) e impulsó el movimiento sindical y cooperativo británico."
                 ],
-                img: "utopia_new_harmony.jpg",
-                baseName: "utopia_new_harmony",
-                caption: "Proyecto de la comunidad cooperativa de New Harmony en Indiana, impulsada por Robert Owen en 1825."
+                img: "utopias_owen.jpg",
+                baseName: "utopias_owen",
+                caption: "Experiencia cooperativa y reforma educativa impulsada por Robert Owen frente a la explotación fabril."
             }
         ],
         personajes: [
-            { nombre: "Henri de Saint-Simon", cargo: "Filósofo y Economista Francés", desc: "Defendió una sociedad organizada por científicos, técnicos y trabajadores para erradicar la pobreza.", img: "personaje_saintsimon.jpg", baseName: "personaje_saintsimon" },
-            { nombre: "Charles Fourier", cargo: "Pensador Social Francés", desc: "Ideó los falansterios como comunidades cooperativas libres y defendió tempranamente la emancipación de la mujer.", img: "personaje_fourier.jpg", baseName: "personaje_fourier" },
-            { nombre: "Robert Owen", cargo: "Reformador Social y Empresario", desc: "Transformó New Lanark en una fábrica modelo con educación y salud, y es considerado padre del cooperativismo moderno.", img: "personaje_owen.jpg", baseName: "personaje_owen" },
-            { nombre: "Flora Tristán", cargo: "Escritora y Activista Social", desc: "Vinculó la emancipación de la clase obrera con los derechos de la mujer en su obra 'La Unión Obrera' (1843).", img: "personaje_floratristan.jpg", baseName: "personaje_floratristan" }
+            { nombre: "Henri de Saint-Simon", cargo: "Filósofo y Economista Francés", desc: "Defendió una sociedad organizada por científicos, técnicos y trabajadores para erradicar la pobreza.", img: "saintsimon.jpg", baseName: "saintsimon" },
+            { nombre: "Charles Fourier", cargo: "Pensador Social Francés", desc: "Ideó los falansterios como comunidades cooperativas libres y defendió tempranamente la emancipación de la mujer.", img: "fourier.jpg", baseName: "fourier" },
+            { nombre: "Robert Owen", cargo: "Reformador Social y Empresario", desc: "Transformó New Lanark en una fábrica modelo con educación y salud, y es considerado padre del cooperativismo moderno.", img: "owen.jpg", baseName: "owen" },
+            { nombre: "Flora Tristán", cargo: "Escritora y Activista Social", desc: "Vinculó la emancipación de la clase obrera con los derechos de la mujer en su obra 'La Unión Obrera' (1843).", img: "floratristan.jpg", baseName: "floratristan" }
         ],
-        mapa: {
-            img: "mapa_comunidades_utopicas.jpg",
-            baseName: "mapa_comunidades_utopicas",
-            titulo: "Principales centros del Socialismo Utópico (Europa y América)",
-            descripcion: "Ubicación de experiencias cooperativas y comunidades utópicas del siglo XIX: New Lanark (Escocia), Guisa (Francia), New Harmony (Indiana) y Brook Farm."
-        }
+        mapa: null
     },
 
     romanticismo: {
@@ -235,9 +207,9 @@ const temasDetallados = {
                     "Surgido a finales del siglo XVIII en Alemania y Gran Bretaña y consolidado en toda Europa durante la primera mitad del siglo XIX, el Romanticismo reaccionó contra la rigidez del Neoclasicismo, el racionalismo ilustrado y la frialdad mecánica de la industrialización.",
                     "Los artistas románticos reivindicaron la subjetividad, la pasión, la naturaleza sublime, la Edad Media y la lucha heroica por la libertad frente a cualquier forma de tiranía."
                 ],
-                img: "rom_delacroix.jpg",
-                baseName: "rom_delacroix",
-                caption: "'La Libertad guiando al pueblo' (1830) de Eugène Delacroix, síntesis visual del espíritu romántico y revolucionario."
+                img: "romanticismo_naturaleza.jpg",
+                baseName: "romanticismo_naturaleza",
+                caption: "La exaltación de la subjetividad, el individuo y la naturaleza sublime frente al racionalismo ilustrado."
             },
             {
                 titulo: "2. Del espíritu del pueblo (Volksgeist) al Nacionalismo político",
@@ -245,9 +217,9 @@ const temasDetallados = {
                     "El Romanticismo impulsó el rescate de las lenguas vernáculas, los cantos folclóricos, las leyendas y la historia medieval de cada comunidad, conceptos desarrollados por pensadores como Johann Gottfried von Herder bajo la idea del Volksgeist (espíritu del pueblo).",
                     "Pronto, esta identidad cultural se transformó en un proyecto político: cada nación tenía derecho a constituir un Estado independiente y soberano, cuestionando tanto a los imperios multinacionales (Austriaco, Ruso, Otomano) como la fragmentación de Italia y Alemania."
                 ],
-                img: "rom_mazzini.jpg",
-                baseName: "rom_mazzini",
-                caption: "Giuseppe Mazzini y el movimiento 'La Joven Italia', que vinculó nacionalismo democrático y unificación."
+                img: "romanticismo_delacroix.jpg",
+                baseName: "romanticismo_delacroix",
+                caption: "'La Libertad guiando al pueblo' (1830) de Eugène Delacroix, síntesis visual del espíritu romántico y nacional."
             },
             {
                 titulo: "3. Las oleadas revolucionarias (1820, 1830 y 1848)",
@@ -255,23 +227,18 @@ const temasDetallados = {
                     "La alianza entre liberalismo, romanticismo y nacionalismo desató tres grandes ciclos revolucionarios: en 1820 (España, Nápoles y la independencia de Grecia), en 1830 (la caída de los Borbones en Francia y la independencia de Bélgica) y en 1848, conocida como la 'Primavera de los Pueblos'.",
                     "En 1848 las barricadas recorrieron París, Viena, Berlín, Milán y Budapest exigiendo constituciones democráticas, derechos laborales y soberanía nacional, sentando las bases de las futuras unificaciones de Italia (1861) y Alemania (1871)."
                 ],
-                img: "rom_1848.jpg",
-                baseName: "rom_1848",
+                img: "romanticismo_1848.jpg",
+                baseName: "romanticismo_1848",
                 caption: "Barricadas revolucionarias de 1848 en Europa, punto culminante de la lucha nacionalista y liberal."
             }
         ],
         personajes: [
-            { nombre: "Eugène Delacroix", cargo: "Pintor Romántico Francés", desc: "Inmortalizó el ideal revolucionario en 'La Libertad guiando al pueblo' (1830) y 'La matanza de Quíos'.", img: "personaje_delacroix.jpg", baseName: "personaje_delacroix" },
-            { nombre: "Lord Byron", cargo: "Poeta Romántico Británico", desc: "Encarnó el ideal del héroe romántico; viajó a luchar por la independencia de Grecia frente al Imperio Otomano.", img: "personaje_byron.jpg", baseName: "personaje_byron" },
-            { nombre: "Giuseppe Mazzini", cargo: "Líder Nacionalista Italiano", desc: "Fundó 'La Joven Italia' (1831) y 'La Joven Europa', promoviendo repúblicas democráticas y naciones libres.", img: "personaje_mazzini.jpg", baseName: "personaje_mazzini" },
-            { nombre: "Johann G. von Herder", cargo: "Filósofo Alemán", desc: "Desarrolló el concepto de 'Volksgeist' (espíritu del pueblo), destacando el valor de la lengua y cultura popular.", img: "personaje_herder.jpg", baseName: "personaje_herder" }
+            { nombre: "Eugène Delacroix", cargo: "Pintor Romántico Francés", desc: "Inmortalizó el ideal revolucionario en 'La Libertad guiando al pueblo' (1830) y 'La matanza de Quíos'.", img: "delacroix.jpg", baseName: "delacroix" },
+            { nombre: "Lord Byron", cargo: "Poeta Romántico Británico", desc: "Encarnó el ideal del héroe romántico; viajó a luchar por la independencia de Grecia frente al Imperio Otomano.", img: "byron.jpg", baseName: "byron" },
+            { nombre: "Giuseppe Mazzini", cargo: "Líder Nacionalista Italiano", desc: "Fundó 'La Joven Italia' (1831) y 'La Joven Europa', promoviendo repúblicas democráticas y naciones libres.", img: "mazzini.jpg", baseName: "mazzini" },
+            { nombre: "Johann G. von Herder", cargo: "Filósofo Alemán", desc: "Desarrolló el concepto de 'Volksgeist' (espíritu del pueblo), destacando el valor de la lengua y cultura popular.", img: "herder.jpg", baseName: "herder" }
         ],
-        mapa: {
-            img: "mapa_revoluciones_1848.jpg",
-            baseName: "mapa_revoluciones_1848",
-            titulo: "Mapa de las Revoluciones de 1848 ('La Primavera de los Pueblos')",
-            descripcion: "Principales focos revolucionarios, nacionalistas y liberales en Francia, los Estados alemanes, la península itálica y el Imperio Austriaco."
-        }
+        mapa: null
     }
 };
 
@@ -281,21 +248,24 @@ function abrirDetalleTema(temaKey) {
 
     const container = document.getElementById('topicFullContainer');
 
-    const visorHTML = data.tieneVisorInteractivo ? `
-        <div class="interactive-showcase-box">
-            <div class="showcase-tabs">
-                <button class="showcase-tab-btn active" onclick="cambiarSlideViena(0, this)">
-                    <span class="tab-year">1814 – 1815</span>
-                    <span class="tab-label">El Congreso de Viena</span>
-                </button>
-                <button class="showcase-tab-btn" onclick="cambiarSlideViena(1, this)">
-                    <span class="tab-year">1815 – 1848</span>
-                    <span class="tab-label">El Sistema de Restauración</span>
-                </button>
+    let visorHTML = '';
+    if (data.tieneVisorInteractivo && temaKey === 'industrial') {
+        visorHTML = `
+            <div class="interactive-showcase-box">
+                <div class="showcase-tabs">
+                    <button class="showcase-tab-btn active" onclick="cambiarSlideIndustria(0, this)">
+                        <span class="tab-year">1760 – 1840</span>
+                        <span class="tab-label">Mecanización y Vapor</span>
+                    </button>
+                    <button class="showcase-tab-btn" onclick="cambiarSlideIndustria(1, this)">
+                        <span class="tab-year">SIGLO XIX</span>
+                        <span class="tab-label">Fábricas y Expansión Urbana</span>
+                    </button>
+                </div>
+                <div class="showcase-body" id="industriaShowcaseBody"></div>
             </div>
-            <div class="showcase-body" id="vienaShowcaseBody"></div>
-        </div>
-    ` : '';
+        `;
+    }
 
     const comparativaEtapasHTML = data.tieneComparativaEtapas ? `
         <div class="stages-creative-section">
@@ -389,6 +359,19 @@ function abrirDetalleTema(temaKey) {
         </div>
     `).join('');
 
+    const mapaHTML = data.mapa ? `
+        <div class="map-single-section">
+            <div class="map-header-bar" style="padding: 20px 24px 10px;">
+                <h3 class="topic-gallery-title" style="margin-bottom: 4px;">${data.mapa.titulo}</h3>
+                <p class="topic-gallery-subtitle" style="margin-bottom: 0;">Cartografía histórica de referencia.</p>
+            </div>
+            <div class="map-full-frame">
+                <img src="${data.mapa.img}" alt="${data.mapa.titulo}" onerror="probarExtensiones(this, '${data.mapa.baseName}')">
+            </div>
+            <p class="map-info-caption">${data.mapa.descripcion}</p>
+        </div>
+    ` : '';
+
     container.innerHTML = `
         <div class="topic-full-hero">
             <div>
@@ -417,47 +400,38 @@ function abrirDetalleTema(temaKey) {
             </div>
         </div>
 
-        <div class="map-single-section">
-            <div class="map-header-bar" style="padding: 20px 24px 10px;">
-                <h3 class="topic-gallery-title" style="margin-bottom: 4px;">${data.mapa.titulo}</h3>
-                <p class="topic-gallery-subtitle" style="margin-bottom: 0;">Cartografía histórica de referencia.</p>
-            </div>
-            <div class="map-full-frame">
-                <img src="${data.mapa.img}" alt="${data.mapa.titulo}" onerror="probarExtensiones(this, '${data.mapa.baseName}')">
-            </div>
-            <p class="map-info-caption">${data.mapa.descripcion}</p>
-        </div>
+        ${mapaHTML}
     `;
 
     cambiarPagina('detalle-tema');
 
-    if (data.tieneVisorInteractivo) {
-        cambiarSlideViena(0);
+    if (temaKey === 'industrial') {
+        cambiarSlideIndustria(0);
     }
 }
 
-const slidesViena = [
+const slidesIndustria = [
     {
-        etapa: "CUMBRE DIPLOMÁTICA • 1814 – 1815",
-        titulo: "El Congreso de Viena",
-        subtitulo: "Palacio Imperial del Hofburg (Septiembre 1814 – Junio 1815)",
-        texto: "Reunió a los representantes de las principales potencias europeas tras la caída de Napoleón Bonaparte. Bajo la conducción de Metternich, Castlereagh, el zar Alejandro I y Talleyrand, se rediseñaron las fronteras de Europa bajo los principios de legitimidad monárquica, equilibrio de poderes y creación de Estados tapón.",
-        img: "viena_congreso_slide.jpg",
-        baseName: "viena_congreso_slide"
+        etapa: "INNOVACIÓN TÉCNICA • 1760 – 1840",
+        titulo: "La Máquina de Vapor y el Sistema Fabril",
+        subtitulo: "De los talleres artesanales a la producción mecanizada",
+        texto: "Inventos como la máquina de vapor de James Watt, la hiladora de Hargreaves y el telar mecánico de Cartwright transformaron por completo la industria textil y siderúrgica en Gran Bretaña.",
+        img: "slide_ind_1.jpg",
+        baseName: "slide_ind_1"
     },
     {
-        etapa: "ORDEN CONSERVADOR • 1815 – 1848",
-        titulo: "La Europa de la Restauración",
-        subtitulo: "La Santa Alianza y la contención de las revoluciones",
-        texto: "Tras firmar el Acta Final de Viena, las monarquías absolutas instauraron un sistema de vigilancia política e intervención militar (Santa Alianza y Cuádruple Alianza) para frenar el avance del liberalismo y el nacionalismo, generando las tensiones que estallarían en 1820, 1830 y 1848.",
-        img: "viena_restauracion_slide.jpg",
-        baseName: "viena_restauracion_slide"
+        etapa: "EXPANSIÓN INDUSTRIAL • SIGLO XIX",
+        titulo: "Ferrocarriles, Ciudades y Clase Obrera",
+        subtitulo: "Integración de mercados y surgimiento de la cuestión social",
+        texto: "La locomotora de vapor conectó regiones enteras y aceleró el crecimiento de las ciudades industriales, donde millones de trabajadores enfrentaron largas jornadas que dieron origen al movimiento obrero.",
+        img: "slide_ind_2.jpg",
+        baseName: "slide_ind_2"
     }
 ];
 
-function cambiarSlideViena(index, btnElement) {
-    const slide = slidesViena[index];
-    const body = document.getElementById('vienaShowcaseBody');
+function cambiarSlideIndustria(index, btnElement) {
+    const slide = slidesIndustria[index];
+    const body = document.getElementById('industriaShowcaseBody');
     if (!slide || !body) return;
 
     if (btnElement) {
@@ -469,7 +443,7 @@ function cambiarSlideViena(index, btnElement) {
         <div class="showcase-slide-grid">
             <div class="showcase-slide-image">
                 <img src="${slide.img}" alt="${slide.titulo}" onerror="probarExtensiones(this, '${slide.baseName}')">
-                <span class="showcase-counter">${index + 1} / ${slidesViena.length}</span>
+                <span class="showcase-counter">${index + 1} / ${slidesIndustria.length}</span>
             </div>
             <div class="showcase-slide-info">
                 <span class="showcase-pill">${slide.etapa}</span>
@@ -482,10 +456,9 @@ function cambiarSlideViena(index, btnElement) {
 }
 
 /* ==================================================
-   4. RED INTERACTIVA DE RELACIONES HISTÓRICAS (4 COLUMNAS: CAUSAS -> ACTORES -> ACONTECIMIENTOS -> CONSECUENCIAS)
+   3. RED INTERACTIVA DE RELACIONES HISTÓRICAS (4 COLUMNAS: CAUSAS -> ACTORES -> ACONTECIMIENTOS -> CONSECUENCIAS)
    ================================================== */
 const nodosHistoricos = [
-    // COLUMNA 1: CAUSAS
     {
         id: "c1",
         columna: "causa",
@@ -531,8 +504,6 @@ const nodosHistoricos = [
             { targetId: "r3", rol: "CONSOLIDÓ EL MOVIMIENTO", texto: "Dio forma al Romanticismo europeo y al concepto de Volksgeist (espíritu del pueblo)." }
         ]
     },
-
-    // COLUMNA 2: ACTORES
     {
         id: "a1",
         columna: "actor",
@@ -578,8 +549,6 @@ const nodosHistoricos = [
             { targetId: "r2", rol: "ARTICULARON", texto: "El Nacionalismo democrático y los proyectos de unificación de Italia y Alemania." }
         ]
     },
-
-    // COLUMNA 3: ACONTECIMIENTOS
     {
         id: "e1",
         columna: "acontecimiento",
@@ -625,8 +594,6 @@ const nodosHistoricos = [
             { targetId: "r2", rol: "PREPARÓ EL CAMINO PARA", texto: "El fin del sistema de Metternich y las unificaciones de Italia (1861) y Alemania (1871)." }
         ]
     },
-
-    // COLUMNA 4: CONSECUENCIAS
     {
         id: "r1",
         columna: "consecuencia",
@@ -792,7 +759,7 @@ window.addEventListener('resize', () => {
 });
 
 /* ==================================================
-   5. EXPLORADOR CRONOLÓGICO Y COMPARADOR DE CORRIENTES
+   4. EXPLORADOR CRONOLÓGICO Y COMPARADOR DE CORRIENTES
    ================================================== */
 const hitosCronologicos = [
     {
@@ -943,7 +910,7 @@ function compararCorriente(key, btn) {
 }
 
 /* ==================================================
-   6. INICIALIZACIÓN AL CARGAR LA PÁGINA
+   5. INICIALIZACIÓN AL CARGAR LA PÁGINA
    ================================================== */
 document.addEventListener('DOMContentLoaded', () => {
     renderRedHistorica();
